@@ -1,30 +1,35 @@
-# Contributing
+# 参与贡献
 
-Thank you for helping improve CodeArts Agent compatibility knowledge.
+[English](CONTRIBUTING.en.md)
 
-## Propose a candidate
+感谢你帮助完善 CodeArts Agent 的社区兼容知识。
 
-Open an issue with the upstream repository URL, the capability you want to use, and any CodeArts environment details you already know. Popularity alone is not enough: active maintenance, a clear license, installation risk, and practical value all matter.
+## 推荐候选项目
 
-## Submit or update a guide
+请通过 Issue 提供上游仓库链接、希望使用的能力，以及已知的 CodeArts 环境信息。项目热度不是唯一标准；维护活跃度、许可证、安装风险和实际价值同样重要。
 
-Every guide must include matching English and Chinese documents and cover:
+## 新增或更新指南
 
-- upstream purpose, repository, version, and license;
-- CodeArts compatibility status and supporting evidence;
-- tested and untested environments;
-- installation, verification, usage, troubleshooting, and removal;
-- permissions, credentials, install scripts, binaries, and other security considerations;
-- known limitations, source links, and the last verification date.
+每篇指南必须同时包含内容对应的中英文文档，并覆盖：
 
-Use only these status values: `Native`, `Works`, `Partial`, `Adapter Required`, `Not Working`, and `Untested`.
+- `README.md` 为默认中文文档，`README.en.md` 为英文第二语言文档；研究记录同样使用 `YYYY-MM-DD.md`（中文）和 `YYYY-MM-DD.en.md`（英文）；
 
-Do not claim a successful test unless you performed and recorded it. Do not include secrets, personal paths, or instructions that silently alter global user configuration.
+- 上游项目用途、仓库、版本和许可证；
+- CodeArts 兼容状态及其证据；
+- 已验证和未验证的环境；
+- 安装、验证、使用、故障排查和卸载方法；
+- 权限、凭据、安装脚本、二进制文件等安全事项；
+- 已知限制、来源链接和最后验证日期。
 
-## Pull request checklist
+兼容状态只能使用：`Native`、`Works`、`Partial`、`Adapter Required`、`Not Working` 和 `Untested`。
 
-- [ ] English and Chinese content describe the same result.
-- [ ] Versions, dates, links, and compatibility status are consistent.
-- [ ] Claims are linked to primary or upstream sources where possible.
-- [ ] Security and rollback implications are documented.
-- [ ] Root guide indexes and compatibility tables are updated.
+没有亲自执行并记录的测试，不能描述为测试成功。不要提交密钥、个人路径，或会静默修改用户全局配置的操作说明。
+
+## Pull Request 检查清单
+
+- [ ] 中英文内容表达相同结论。
+- [ ] 中文是默认入口，英文文件使用 `.en.md` 后缀。
+- [ ] 版本、日期、链接和兼容状态一致。
+- [ ] 重要结论尽可能引用第一方或上游来源。
+- [ ] 已说明安全影响和回滚方法。
+- [ ] 已更新根目录的指南索引和兼容矩阵。

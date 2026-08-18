@@ -1,38 +1,38 @@
-# Superpowers on CodeArts CLI
+# 在 CodeArts CLI 中使用 Superpowers
 
-[简体中文](README.zh-CN.md)
+[English](README.en.md)
 
-Install Superpowers in a project to add its 14 development-workflow skills to CodeArts CLI.
+在项目中安装 Superpowers，即可为 CodeArts CLI 增加 14 个开发工作流 Skills。
 
-## Install with an agent
+## 让 Agent 帮你安装
 
-Open the target project in CodeArts, paste the prompt below, and review the proposed changes before allowing installation:
+在 CodeArts 中打开目标项目，把下面整段提示词发给 Agent；执行安装前先检查它计划修改的内容：
 
 ```text
-Install Superpowers 6.3.0 for CodeArts CLI in the current project.
+请在当前项目中为 CodeArts CLI 安装 Superpowers 6.3.0。
 
-Requirements:
-1. Work only inside this project's .codeartsdoer directory. Do not modify user-level CodeArts configuration, global npm packages, or credential environment variables.
-2. Do not print or record API keys, CODEARTS_CLI_AK, or CODEARTS_CLI_SK values.
-3. Check that codearts, Node.js, npm, and Git are available. Run codearts models and ask me to choose a provider/model ID only if the intended model is ambiguous.
-4. Inspect existing .codeartsdoer/package.json, plugins, and skills before editing. Merge changes and stop on same-name skill conflicts; do not overwrite unrelated configuration.
-5. Add the exact dependency superpowers from git+https://github.com/obra/superpowers.git#v6.3.0 and install it with npm lifecycle scripts disabled.
-6. Create .codeartsdoer/plugins/superpowers.js as an ES module that re-exports SuperpowersPlugin from the superpowers package.
-7. Copy all 14 package skill directories from node_modules into .codeartsdoer/skills without overwriting existing directories.
-8. Verify discovery with codearts debug skill.
-9. Run a sandboxed, non-interactive CodeArts test with the selected model. Require the model to call the skill tool with name systematic-debugging and confirm that the completed tool call returns its Iron Law: NO FIXES WITHOUT ROOT CAUSE INVESTIGATION FIRST. A text answer without a successful skill tool event does not pass.
-10. Report the exact files changed, commands run, verification evidence, conflicts or limitations, and precise rollback steps. If any verification fails, stop and report failure instead of claiming success.
+要求：
+1. 只允许修改当前项目的 .codeartsdoer 目录。不要修改用户级 CodeArts 配置、全局 npm 包或凭据环境变量。
+2. 不要输出或记录 API Key、CODEARTS_CLI_AK、CODEARTS_CLI_SK 的值。
+3. 检查 codearts、Node.js、npm 和 Git 是否可用。运行 codearts models；只有无法判断应使用哪个模型时，才询问我选择 provider/model ID。
+4. 修改前检查已有的 .codeartsdoer/package.json、plugins 和 skills。采用合并方式，遇到同名 Skill 时停止，不要覆盖无关配置。
+5. 添加精确依赖 superpowers，来源固定为 git+https://github.com/obra/superpowers.git#v6.3.0，并在禁用 npm 生命周期脚本的情况下安装。
+6. 创建 .codeartsdoer/plugins/superpowers.js：使用 ES Module 从 superpowers 包重新导出 SuperpowersPlugin。
+7. 把包中全部 14 个 Skill 目录从 node_modules 复制到 .codeartsdoer/skills，不得覆盖已有目录。
+8. 使用 codearts debug skill 检查发现结果。
+9. 使用选定模型执行一次沙箱、非交互 CodeArts 测试。明确要求模型调用名为 systematic-debugging 的 skill 工具，并确认成功的工具调用返回 Iron Law：NO FIXES WITHOUT ROOT CAUSE INVESTIGATION FIRST。只有文本答案、没有成功的 skill 工具事件，不能算通过。
+10. 最后报告修改的准确文件、执行的命令、验证证据、冲突或限制，以及精确回滚步骤。如果任何验证失败，停止并如实报告，不能声明安装成功。
 ```
 
-The manual procedure below describes exactly what the agent should do.
+下面的手动步骤就是 Agent 应当执行的完整流程。
 
-## Install manually on Windows
+## Windows 手动安装
 
-### 1. Check prerequisites
+### 1. 检查前置条件
 
-- Install CodeArts CLI using the official [installation guide](https://support.huaweicloud.com/usermanual-cli/codeartsagent_cli_0005.html).
-- Install Node.js/npm and Git.
-- Run the steps from the target project's root directory.
+- 按官方[安装说明](https://support.huaweicloud.com/usermanual-cli/codeartsagent_cli_0005.html)安装 CodeArts CLI。
+- 安装 Node.js/npm 和 Git。
+- 在目标项目根目录执行后续步骤。
 
 ```powershell
 codearts --version
@@ -41,9 +41,9 @@ npm --version
 git --version
 ```
 
-### 2. Add the pinned dependency
+### 2. 添加固定版本依赖
 
-Create `.codeartsdoer/package.json` if the project does not already have one:
+如果项目还没有 `.codeartsdoer/package.json`，创建以下文件：
 
 ```json
 {
@@ -55,27 +55,27 @@ Create `.codeartsdoer/package.json` if the project does not already have one:
 }
 ```
 
-If the file exists, merge this dependency instead of replacing the file.
+如果文件已经存在，只合并该依赖，不要覆盖原内容。
 
-Install without package lifecycle scripts:
+禁止执行包生命周期脚本并安装依赖：
 
 ```powershell
 npm install --prefix .codeartsdoer --ignore-scripts --no-audit --no-fund
 ```
 
-### 3. Add the CodeArts plugin entrypoint
+### 3. 添加 CodeArts 插件入口
 
-Create `.codeartsdoer/plugins/superpowers.js`:
+创建 `.codeartsdoer/plugins/superpowers.js`：
 
 ```js
 export { SuperpowersPlugin } from "superpowers";
 ```
 
-The maintained copy is [adapters/superpowers/superpowers.js](../../adapters/superpowers/superpowers.js).
+仓库中维护的副本见 [adapters/superpowers/superpowers.js](../../adapters/superpowers/superpowers.js)。
 
-### 4. Install the skills into CodeArts' native directory
+### 4. 把 Skills 安装到 CodeArts 原生目录
 
-The following refuses to overwrite same-named skills already present in the project:
+以下脚本遇到项目中已有的同名 Skill 时会停止，不会直接覆盖：
 
 ```powershell
 $source = (Resolve-Path ".codeartsdoer\node_modules\superpowers\skills").Path
@@ -95,7 +95,7 @@ foreach ($skillDirectory in $skillDirectories) {
 }
 ```
 
-Expected project layout:
+预期项目结构：
 
 ```text
 .codeartsdoer/
@@ -120,23 +120,23 @@ Expected project layout:
     writing-skills/
 ```
 
-## Configure CodeArts
+## 配置 CodeArts
 
-CodeArts model configuration is user-level; do not place model credentials in this project.
+CodeArts 模型配置属于用户级配置，不要把模型凭据放进当前项目。
 
-1. Follow the official [configuration example](https://support.huaweicloud.com/usermanual-cli/codeartsagent_cli_00022.html) and [AK/SK configuration](https://support.huaweicloud.com/usermanual-cli/codeartsagent_cli_0026.html).
-2. Open a new PowerShell window if environment variables were added after CodeArts started.
-3. Confirm the model you intend to use appears in the `provider/model` format:
+1. 参考官方[配置示例](https://support.huaweicloud.com/usermanual-cli/codeartsagent_cli_00022.html)和 [AK/SK 配置](https://support.huaweicloud.com/usermanual-cli/codeartsagent_cli_0026.html)。
+2. 如果环境变量是在 CodeArts 启动后新增的，请重新打开 PowerShell。
+3. 确认准备使用的模型以 `provider/model` 格式出现在列表中：
 
 ```powershell
 codearts models
 ```
 
-The examples below use `mimo/mimo-v2.5`; substitute your configured model ID.
+后续示例使用 `mimo/mimo-v2.5`，请按实际情况替换成自己的模型 ID。
 
-## Verify
+## 验证
 
-First check discovery:
+先检查发现结果：
 
 ```powershell
 $skills = codearts debug skill 2>$null | Out-String | ConvertFrom-Json
@@ -146,87 +146,87 @@ $skills |
   Select-Object name, location
 ```
 
-The listed skills should come from the project's `.codeartsdoer/skills` directory.
+列出的 Skills 应来自项目 `.codeartsdoer/skills` 目录。
 
-Then perform a real model invocation. Replace the model ID if needed:
+然后进行真实模型调用；如有需要，请替换模型 ID：
 
 ```powershell
 codearts run --format json --sandbox --model "mimo/mimo-v2.5" `
   "Call the skill tool exactly once with name systematic-debugging. Do not use glob, read, or shell tools. After the skill tool returns, output only its Iron Law sentence."
 ```
 
-Passing evidence includes a JSON event with `"tool":"skill"`, `"status":"completed"`, and this final text:
+通过时，JSON 事件中应包含 `"tool":"skill"`、`"status":"completed"`，最终文本为：
 
 ```text
 NO FIXES WITHOUT ROOT CAUSE INVESTIGATION FIRST
 ```
 
-A plausible answer without a completed `skill` event is not sufficient verification.
+如果模型只是给出了看似正确的答案，但没有成功的 `skill` 事件，不能视为验证通过。
 
-## Use
+## 使用
 
-Ask CodeArts to call a specific skill explicitly, for example:
+建议明确要求 CodeArts 调用指定 Skill，例如：
 
 ```text
 Call the skill tool with name brainstorming before helping me design this feature.
 ```
 
-For debugging:
+排查故障时可以使用：
 
 ```text
 Call the skill tool with name systematic-debugging, then investigate this failing test. Do not change files until the root cause is established.
 ```
 
-Read each skill before permitting file changes or shell commands. Skills that mention OpenCode `task`, `todowrite`, or other host-specific tools may need translation to the tools available in the current CodeArts session.
+在允许修改文件或执行命令前，应先阅读对应 Skill。提到 OpenCode `task`、`todowrite` 或其他宿主专用工具的 Skills，可能需要映射到当前 CodeArts 会话实际提供的工具。
 
-## Update
+## 更新
 
-Change the pinned Git tag in `.codeartsdoer/package.json`, run the same safe npm install, inspect upstream changes, and replace only the 14 copied Superpowers skill directories. Re-run both discovery and real model verification before claiming the new version works.
+修改 `.codeartsdoer/package.json` 中固定的 Git Tag，使用同样的安全 npm 命令安装，检查上游变更，然后只替换复制过来的 14 个 Superpowers Skill 目录。重新完成“发现检查”和“真实模型调用”后，才能声明新版本可用。
 
-## Remove
+## 卸载
 
-Preserve unrelated CodeArts plugins and skills. Remove only:
+保留其他 CodeArts 插件和 Skills，只删除：
 
-- `.codeartsdoer/plugins/superpowers.js`;
-- the 14 Superpowers skill directories listed in the expected layout;
-- the dependency with `npm uninstall --prefix .codeartsdoer superpowers --ignore-scripts`.
+- `.codeartsdoer/plugins/superpowers.js`；
+- 预期结构中列出的 14 个 Superpowers Skill 目录；
+- 使用 `npm uninstall --prefix .codeartsdoer superpowers --ignore-scripts` 移除依赖。
 
-Review same-name directories before deletion if another integration may also have installed them. Finally, run the discovery command again and confirm that the project-local Superpowers skills are absent.
+如果其他集成可能安装过同名目录，删除前必须检查。最后重新运行发现命令，确认项目级 Superpowers Skills 已消失。
 
-## Verified compatibility
+## 已验证版本与结论
 
-| Item | Verified value |
+| 项目 | 已验证值 |
 | --- | --- |
-| Compatibility | **Adapter Required** |
-| Upstream | [obra/superpowers](https://github.com/obra/superpowers) |
-| Upstream version | 6.3.0 (`b36e0829c6d0140e93cfef2ca599b1b07d4a7797`) |
-| License | MIT |
-| CodeArts | CLI 26.8.1 on Windows 11 |
-| Model used | `mimo/mimo-v2.5` |
-| Last verified | 2026-08-18 |
+| 兼容状态 | **Adapter Required** |
+| 上游项目 | [obra/superpowers](https://github.com/obra/superpowers) |
+| 上游版本 | 6.3.0（`b36e0829c6d0140e93cfef2ca599b1b07d4a7797`） |
+| 许可证 | MIT |
+| CodeArts | Windows 11 上的 CLI 26.8.1 |
+| 测试模型 | `mimo/mimo-v2.5` |
+| 最后验证日期 | 2026-08-18 |
 
-The adapted installation was completed in two isolated projects. In both, a real MiMo session successfully called `systematic-debugging` through CodeArts' native `skill` tool and returned its Iron Law. Removing the project `.codeartsdoer` installation made the third-party skills disappear, confirming the rollback boundary.
+适配后的安装已在两个隔离项目中完成。两次测试里，MiMo 都通过 CodeArts 原生 `skill` 工具成功调用了 `systematic-debugging`，并返回其 Iron Law。临时移走项目 `.codeartsdoer` 后，第三方 Skills 会从发现结果中消失，说明回滚边界确实限制在项目内。
 
-Why the adapter is required on CodeArts CLI 26.8.1:
+CodeArts CLI 26.8.1 需要适配器的原因：
 
-- The local `.js` plugin wrapper loaded successfully.
-- Skills added dynamically through the upstream plugin's `config.skills.paths` hook appeared in `codearts debug skill`, but were unavailable to the `skill` tool in a real `codearts run` session.
-- Copying the skills into `.codeartsdoer/skills` made them available at runtime.
+- 本地 `.js` 插件包装入口加载成功。
+- 上游插件通过 `config.skills.paths` 动态加入的 Skills 会出现在 `codearts debug skill`，但真实 `codearts run` 会话的 `skill` 工具无法调用。
+- 把 Skills 复制到 `.codeartsdoer/skills` 后，运行时调用成功。
 
-Not yet verified: CodeArts desktop/IDE, Linux, the automatic first-message bootstrap as a separate behavioral assertion, and complete workflows for all skills. Subagent, todo, worktree, and review workflows may require CodeArts-specific tool mapping because some upstream instructions use OpenCode terminology.
+尚未验证：CodeArts 桌面端/IDE、Linux、把“首条消息自动注入”单独作为行为进行断言，以及全部 Skills 的完整工作流。子 Agent、Todo、Worktree 和代码审查流程可能需要 CodeArts 专用工具映射，因为部分上游指令使用 OpenCode 术语。
 
-## Security notes
+## 安全说明
 
-- Version 6.3.0 is installed from a pinned Git tag. The tag resolved to the commit recorded above; review the lockfile before committing it.
-- The verified package had no dependencies or install/postinstall lifecycle scripts, but future tags must be reviewed again.
-- Installation is project-local and does not require `--auto`.
-- Superpowers is intentionally prescriptive. Its skill instructions can materially change an agent's workflow, so review them before use on sensitive repositories.
-- The copy step intentionally stops on name collisions to avoid overwriting an existing skill source.
+- 6.3.0 从固定 Git Tag 安装，该 Tag 解析到上表记录的 Commit；提交 lockfile 前应检查其内容。
+- 已验证版本没有依赖，也没有 install/postinstall 生命周期脚本，但后续 Tag 仍需重新检查。
+- 安装范围限制在项目内，不需要使用 `--auto`。
+- Superpowers 的设计本身具有较强流程约束，Skill 指令会明显改变 Agent 工作方式；在敏感仓库中使用前应先审阅。
+- 复制脚本遇到名称冲突会停止，避免覆盖其他来源的同名 Skill。
 
-## Evidence and sources
+## 证据与来源
 
-- [Hands-on verification log](../../research/2026-08-18.md)
+- [本地实测记录](../../research/2026-08-18.md)
 - [CodeArts CLI Skills](https://support.huaweicloud.com/usermanual-cli/codeartsagent_cli_0019.html)
 - [CodeArts CLI Hooks](https://support.huaweicloud.com/usermanual-cli/codeartsagent_cli_0018.html)
-- [Superpowers OpenCode installation](https://github.com/obra/superpowers/blob/main/.opencode/INSTALL.md)
-- [Superpowers repository](https://github.com/obra/superpowers)
+- [Superpowers OpenCode 安装说明](https://github.com/obra/superpowers/blob/main/.opencode/INSTALL.md)
+- [Superpowers 仓库](https://github.com/obra/superpowers)
