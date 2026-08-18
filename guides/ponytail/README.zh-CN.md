@@ -2,56 +2,45 @@
 
 [English](README.md)
 
-## 验证结论
+在项目中安装 Ponytail，即可为 CodeArts CLI 增加 6 个代码精简和审查 Skills。
 
-| 项目 | 已验证值 |
-| --- | --- |
-| 兼容状态 | **Adapter Required** |
-| 上游项目 | [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) |
-| 上游版本 | 4.9.0（`0a4dd63ad4541f4f655c4108a295916f3c1d8fda`） |
-| 许可证 | MIT |
-| CodeArts | Windows 11 上的 CLI 26.8.1 |
-| 测试模型 | `mimo/mimo-v2.5` |
-| 最后验证日期 | 2026-08-18 |
+## 让 Agent 帮你安装
 
-安装轻量的项目级适配器后，Ponytail 的 6 个 Skills 可以通过 CodeArts 原生 `skill` 工具使用。该结果已在两个隔离项目中重复验证，并完成回滚测试。
+在 CodeArts 中打开目标项目，把下面整段提示词发给 Agent；执行安装前先检查它计划修改的内容：
 
-CodeArts CLI 26.8.1 不能直接照搬上游 OpenCode 安装方法：
+```text
+请在当前项目中为 CodeArts CLI 安装 Ponytail 4.9.0。
 
-- CodeArts 没有扫描上游的 `.mjs` 插件入口，适配器必须使用 `.js`。
-- 插件通过 `config.skills.paths` 动态加入的 Skills 会出现在 `codearts debug skill` 中，但真实 `codearts run` 会话的 `skill` 工具仍然找不到它们。
-- 因此还必须把 Skills 复制到 CodeArts 原生项目目录 `.codeartsdoer/skills`。
+要求：
+1. 只允许修改当前项目的 .codeartsdoer 目录。不要修改用户级 CodeArts 配置、全局 npm 包或凭据环境变量。
+2. 不要输出或记录 API Key、CODEARTS_CLI_AK、CODEARTS_CLI_SK 的值。
+3. 检查 codearts、Node.js 和 npm 是否可用。运行 codearts models；只有无法判断应使用哪个模型时，才询问我选择 provider/model ID。
+4. 修改前检查已有的 .codeartsdoer/package.json、plugins 和 skills。采用合并方式，遇到同名 Skill 时停止，不要覆盖无关配置。
+5. 添加精确依赖 @dietrichgebert/ponytail 4.9.0，并在禁用 npm 生命周期脚本的情况下安装。
+6. 创建 .codeartsdoer/plugins/ponytail.js：使用 ES Module 导入包的 default export，并以 PonytailPlugin 名称重新导出。不要使用 .mjs 入口。
+7. 把包中 6 个 Skill 目录从 node_modules 复制到 .codeartsdoer/skills，不得覆盖已有目录。
+8. 使用 codearts debug skill 检查发现结果。
+9. 使用选定模型执行一次沙箱、非交互 CodeArts 测试。明确要求模型调用名为 ponytail-help 的 skill 工具，并确认成功的工具调用返回 Lite、Full、Ultra，顺序必须一致。只有文本答案、没有成功的 skill 工具事件，不能算通过。
+10. 最后报告修改的准确文件、执行的命令、验证证据、冲突或限制，以及精确回滚步骤。如果任何验证失败，停止并如实报告，不能声明安装成功。
+```
 
-## 验证范围与限制
+下面的手动步骤就是 Agent 应当执行的完整流程。
 
-已验证：
+## Windows 手动安装
 
-- 从固定版本的 npm 包进行项目级安装；
-- 加载 `.js` 插件包装入口；
-- 发现全部 6 个 Skills；
-- MiMo 在真实会话中通过 CodeArts `skill` 工具调用 `ponytail-help`；
-- 第二个干净项目复现，以及项目级回滚。
+### 1. 检查前置条件
 
-未验证：
+- 按官方[安装说明](https://support.huaweicloud.com/usermanual-cli/codeartsagent_cli_0005.html)安装 CodeArts CLI。
+- 安装 Node.js/npm。
+- 在目标项目根目录执行后续步骤。
 
-- CodeArts 桌面端/IDE 客户端和 Linux；
-- Ponytail 持久化的 `/ponytail <level>` 模式切换；
-- 每个 Skill 的完整工作流。
+```powershell
+codearts --version
+node --version
+npm --version
+```
 
-本次没有调用模式切换命令，因为上游会把状态写入 `~/.config/opencode/.ponytail-active`。当前建议通过 CodeArts `skill` 工具明确调用所需 Skill。
-
-## 前置条件
-
-1. 安装并配置 CodeArts CLI。参考官方的[安装说明](https://support.huaweicloud.com/usermanual-cli/codeartsagent_cli_0005.html)、[配置示例](https://support.huaweicloud.com/usermanual-cli/codeartsagent_cli_00022.html)和 [AK/SK 配置](https://support.huaweicloud.com/usermanual-cli/codeartsagent_cli_0026.html)。
-2. 确认 `codearts --version` 和 `codearts models` 可正常运行。
-3. 安装 Node.js/npm。
-4. 在目标项目根目录执行以下步骤。
-
-不要把模型 API Key 或真实华为云凭据写入项目或 Git 历史。
-
-## Windows PowerShell 安装步骤
-
-### 1. 添加固定版本依赖
+### 2. 添加固定版本依赖
 
 如果项目还没有 `.codeartsdoer/package.json`，创建以下文件：
 
@@ -73,7 +62,7 @@ CodeArts CLI 26.8.1 不能直接照搬上游 OpenCode 安装方法：
 npm install --prefix .codeartsdoer --ignore-scripts --no-audit --no-fund
 ```
 
-### 2. 添加 CodeArts 插件入口
+### 3. 添加 CodeArts 插件入口
 
 创建 `.codeartsdoer/plugins/ponytail.js`：
 
@@ -85,7 +74,7 @@ export const PonytailPlugin = Ponytail;
 
 仓库中维护的副本见 [adapters/ponytail/ponytail.js](../../adapters/ponytail/ponytail.js)。必须保留 `.js` 扩展名；已验证的 CodeArts 版本不会发现 `.mjs` 入口。
 
-### 3. 把 Skills 安装到 CodeArts 原生目录
+### 4. 把 Skills 安装到 CodeArts 原生目录
 
 以下脚本遇到项目中已有的同名 Skill 时会停止，不会直接覆盖：
 
@@ -123,6 +112,20 @@ foreach ($skillDirectory in $skillDirectories) {
     ponytail-help/
     ponytail-review/
 ```
+
+## 配置 CodeArts
+
+CodeArts 模型配置属于用户级配置，不要把模型凭据放进当前项目。
+
+1. 参考官方[配置示例](https://support.huaweicloud.com/usermanual-cli/codeartsagent_cli_00022.html)和 [AK/SK 配置](https://support.huaweicloud.com/usermanual-cli/codeartsagent_cli_0026.html)。
+2. 如果环境变量是在 CodeArts 启动后新增的，请重新打开 PowerShell。
+3. 确认准备使用的模型以 `provider/model` 格式出现在列表中：
+
+```powershell
+codearts models
+```
+
+后续示例使用 `mimo/mimo-v2.5`，请按实际情况替换成自己的模型 ID。
 
 ## 验证
 
@@ -177,6 +180,28 @@ Call the skill tool with name ponytail-review, then review the current diff for 
 如果使用过 Ponytail 模式切换，请检查用户目录下的 `.config/opencode/.ponytail-active`，确认后可删除。此次验证没有创建该文件。
 
 最后重新运行发现命令，确认项目中不再存在 `ponytail*` Skills。
+
+## 已验证版本与结论
+
+| 项目 | 已验证值 |
+| --- | --- |
+| 兼容状态 | **Adapter Required** |
+| 上游项目 | [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) |
+| 上游版本 | 4.9.0（`0a4dd63ad4541f4f655c4108a295916f3c1d8fda`） |
+| 许可证 | MIT |
+| CodeArts | Windows 11 上的 CLI 26.8.1 |
+| 测试模型 | `mimo/mimo-v2.5` |
+| 最后验证日期 | 2026-08-18 |
+
+适配后的安装已在两个隔离项目中完成。两次测试里，MiMo 都通过 CodeArts 原生 `skill` 工具成功调用了 `ponytail-help`，并返回 `Lite, Full, Ultra`。临时移走项目 `.codeartsdoer` 后，第三方 Skills 会从发现结果中消失，说明回滚边界确实限制在项目内。
+
+CodeArts CLI 26.8.1 需要适配器的原因：
+
+- CodeArts 没有扫描上游 `.mjs` 插件入口，改为 `.js` 后加载成功。
+- 上游插件通过 `config.skills.paths` 动态加入的 Skills 会出现在 `codearts debug skill`，但真实 `codearts run` 会话的 `skill` 工具无法调用。
+- 把 Skills 复制到 `.codeartsdoer/skills` 后，运行时调用成功。
+
+尚未验证：CodeArts 桌面端/IDE、Linux、持久化 `/ponytail <level>` 模式切换，以及每个 Skill 的完整工作流。本次刻意没有调用模式切换，因为上游会把状态写入 `~/.config/opencode/.ponytail-active`。
 
 ## 安全说明
 

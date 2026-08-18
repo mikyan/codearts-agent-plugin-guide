@@ -2,56 +2,45 @@
 
 [简体中文](README.zh-CN.md)
 
-## Result
+Install Ponytail in a project to add its six code-simplification and review skills to CodeArts CLI.
 
-| Item | Verified value |
-| --- | --- |
-| Compatibility | **Adapter Required** |
-| Upstream | [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) |
-| Upstream version | 4.9.0 (`0a4dd63ad4541f4f655c4108a295916f3c1d8fda`) |
-| License | MIT |
-| CodeArts | CLI 26.8.1 on Windows 11 |
-| Model used | `mimo/mimo-v2.5` |
-| Last verified | 2026-08-18 |
+## Install with an agent
 
-Ponytail's six skills work through CodeArts' native `skill` tool after a thin project adapter is installed. The result was reproduced in two isolated projects and rollback-tested.
+Open the target project in CodeArts, paste the prompt below, and review the proposed changes before allowing installation:
 
-The upstream OpenCode installation is not sufficient on CodeArts CLI 26.8.1:
+```text
+Install Ponytail 4.9.0 for CodeArts CLI in the current project.
 
-- CodeArts did not scan the upstream `.mjs` plugin entrypoint; the adapter uses `.js`.
-- Skills added dynamically through the plugin's `config.skills.paths` hook appeared in `codearts debug skill`, but were unavailable to the `skill` tool in a real `codearts run` session.
-- The skills must also be copied to the native project path `.codeartsdoer/skills`.
+Requirements:
+1. Work only inside this project's .codeartsdoer directory. Do not modify user-level CodeArts configuration, global npm packages, or credential environment variables.
+2. Do not print or record API keys, CODEARTS_CLI_AK, or CODEARTS_CLI_SK values.
+3. Check that codearts, Node.js, and npm are available. Run codearts models and ask me to choose a provider/model ID only if the intended model is ambiguous.
+4. Inspect existing .codeartsdoer/package.json, plugins, and skills before editing. Merge changes and stop on same-name skill conflicts; do not overwrite unrelated configuration.
+5. Add the exact dependency @dietrichgebert/ponytail 4.9.0 and install it with npm lifecycle scripts disabled.
+6. Create .codeartsdoer/plugins/ponytail.js as an ES module that imports the package default export and re-exports it as PonytailPlugin. Do not use an .mjs entrypoint.
+7. Copy the package's six skill directories from node_modules into .codeartsdoer/skills without overwriting existing directories.
+8. Verify discovery with codearts debug skill.
+9. Run a sandboxed, non-interactive CodeArts test with the selected model. Require the model to call the skill tool with name ponytail-help and confirm that the completed tool call returns the levels Lite, Full, Ultra in that order. A text answer without a successful skill tool event does not pass.
+10. Report the exact files changed, commands run, verification evidence, conflicts or limitations, and precise rollback steps. If any verification fails, stop and report failure instead of claiming success.
+```
 
-## Scope and limitations
+The manual procedure below describes exactly what the agent should do.
 
-Verified:
+## Install manually on Windows
 
-- project-local installation from the pinned npm release;
-- loading the `.js` plugin wrapper;
-- discovery of all six skills;
-- a real MiMo session calling `ponytail-help` through the CodeArts `skill` tool;
-- a second clean-project reproduction and project-local rollback.
+### 1. Check prerequisites
 
-Not verified:
+- Install CodeArts CLI using the official [installation guide](https://support.huaweicloud.com/usermanual-cli/codeartsagent_cli_0005.html).
+- Install Node.js/npm.
+- Run the steps from the target project's root directory.
 
-- CodeArts desktop/IDE client or Linux;
-- Ponytail's persisted `/ponytail <level>` mode switching;
-- every skill's full workflow.
+```powershell
+codearts --version
+node --version
+npm --version
+```
 
-The mode command was not exercised because upstream writes its state to `~/.config/opencode/.ponytail-active`. The tested, recommended path is explicit use of the CodeArts `skill` tool.
-
-## Prerequisites
-
-1. Install and configure CodeArts CLI. See the official [installation](https://support.huaweicloud.com/usermanual-cli/codeartsagent_cli_0005.html), [configuration example](https://support.huaweicloud.com/usermanual-cli/codeartsagent_cli_00022.html), and [AK/SK configuration](https://support.huaweicloud.com/usermanual-cli/codeartsagent_cli_0026.html).
-2. Confirm `codearts --version` and `codearts models` work.
-3. Install Node.js/npm.
-4. Run the following steps from the target project's root directory.
-
-Keep provider API keys and real Huawei Cloud credentials out of the project and Git history.
-
-## Install on Windows PowerShell
-
-### 1. Add the pinned dependency
+### 2. Add the pinned dependency
 
 Create `.codeartsdoer/package.json` if the project does not already have one:
 
@@ -73,7 +62,7 @@ Install without package lifecycle scripts:
 npm install --prefix .codeartsdoer --ignore-scripts --no-audit --no-fund
 ```
 
-### 2. Add the CodeArts plugin entrypoint
+### 3. Add the CodeArts plugin entrypoint
 
 Create `.codeartsdoer/plugins/ponytail.js`:
 
@@ -85,7 +74,7 @@ export const PonytailPlugin = Ponytail;
 
 The maintained copy is [adapters/ponytail/ponytail.js](../../adapters/ponytail/ponytail.js). Keep the `.js` extension; `.mjs` was not discovered in the verified CodeArts version.
 
-### 3. Install the skills into CodeArts' native directory
+### 4. Install the skills into CodeArts' native directory
 
 The following refuses to overwrite same-named skills already present in the project:
 
@@ -123,6 +112,20 @@ Expected project layout:
     ponytail-help/
     ponytail-review/
 ```
+
+## Configure CodeArts
+
+CodeArts model configuration is user-level; do not place model credentials in this project.
+
+1. Follow the official [configuration example](https://support.huaweicloud.com/usermanual-cli/codeartsagent_cli_00022.html) and [AK/SK configuration](https://support.huaweicloud.com/usermanual-cli/codeartsagent_cli_0026.html).
+2. Open a new PowerShell window if environment variables were added after CodeArts started.
+3. Confirm the model you intend to use appears in the `provider/model` format:
+
+```powershell
+codearts models
+```
+
+The examples below use `mimo/mimo-v2.5`; substitute your configured model ID.
 
 ## Verify
 
@@ -177,6 +180,28 @@ Preserve unrelated CodeArts plugins and skills. Remove only:
 If you used Ponytail mode switching, review and optionally remove the upstream state file at `.config/opencode/.ponytail-active` under your user profile. It was not created during this verification.
 
 Finally, run the discovery command again and confirm that no `ponytail*` project skills remain.
+
+## Verified compatibility
+
+| Item | Verified value |
+| --- | --- |
+| Compatibility | **Adapter Required** |
+| Upstream | [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) |
+| Upstream version | 4.9.0 (`0a4dd63ad4541f4f655c4108a295916f3c1d8fda`) |
+| License | MIT |
+| CodeArts | CLI 26.8.1 on Windows 11 |
+| Model used | `mimo/mimo-v2.5` |
+| Last verified | 2026-08-18 |
+
+The adapted installation was completed in two isolated projects. In both, a real MiMo session successfully called `ponytail-help` through CodeArts' native `skill` tool and returned `Lite, Full, Ultra`. Removing the project `.codeartsdoer` installation made the third-party skills disappear, confirming the rollback boundary.
+
+Why the adapter is required on CodeArts CLI 26.8.1:
+
+- CodeArts did not scan the upstream `.mjs` plugin entrypoint; `.js` loaded successfully.
+- Skills added dynamically through the upstream plugin's `config.skills.paths` hook appeared in `codearts debug skill`, but were unavailable to the `skill` tool in a real `codearts run` session.
+- Copying the skills into `.codeartsdoer/skills` made them available at runtime.
+
+Not yet verified: CodeArts desktop/IDE, Linux, persisted `/ponytail <level>` mode switching, and every skill's full workflow. The mode command was intentionally not exercised because upstream writes state to `~/.config/opencode/.ponytail-active`.
 
 ## Security notes
 

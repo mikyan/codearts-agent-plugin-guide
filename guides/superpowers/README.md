@@ -2,56 +2,46 @@
 
 [简体中文](README.zh-CN.md)
 
-## Result
+Install Superpowers in a project to add its 14 development-workflow skills to CodeArts CLI.
 
-| Item | Verified value |
-| --- | --- |
-| Compatibility | **Adapter Required** |
-| Upstream | [obra/superpowers](https://github.com/obra/superpowers) |
-| Upstream version | 6.3.0 (`b36e0829c6d0140e93cfef2ca599b1b07d4a7797`) |
-| License | MIT |
-| CodeArts | CLI 26.8.1 on Windows 11 |
-| Model used | `mimo/mimo-v2.5` |
-| Last verified | 2026-08-18 |
+## Install with an agent
 
-Superpowers skills work through CodeArts' native `skill` tool after a thin project adapter is installed. The result was reproduced in two isolated projects and rollback-tested.
+Open the target project in CodeArts, paste the prompt below, and review the proposed changes before allowing installation:
 
-The upstream OpenCode installation is not sufficient on CodeArts CLI 26.8.1:
+```text
+Install Superpowers 6.3.0 for CodeArts CLI in the current project.
 
-- CodeArts project plugins need a local `.js` entrypoint.
-- The upstream plugin's dynamic `config.skills.paths` registration appeared in `codearts debug skill`, but a real `codearts run` session could not load those skills.
-- The upstream skills must also be copied to CodeArts' native project path, `.codeartsdoer/skills`.
+Requirements:
+1. Work only inside this project's .codeartsdoer directory. Do not modify user-level CodeArts configuration, global npm packages, or credential environment variables.
+2. Do not print or record API keys, CODEARTS_CLI_AK, or CODEARTS_CLI_SK values.
+3. Check that codearts, Node.js, npm, and Git are available. Run codearts models and ask me to choose a provider/model ID only if the intended model is ambiguous.
+4. Inspect existing .codeartsdoer/package.json, plugins, and skills before editing. Merge changes and stop on same-name skill conflicts; do not overwrite unrelated configuration.
+5. Add the exact dependency superpowers from git+https://github.com/obra/superpowers.git#v6.3.0 and install it with npm lifecycle scripts disabled.
+6. Create .codeartsdoer/plugins/superpowers.js as an ES module that re-exports SuperpowersPlugin from the superpowers package.
+7. Copy all 14 package skill directories from node_modules into .codeartsdoer/skills without overwriting existing directories.
+8. Verify discovery with codearts debug skill.
+9. Run a sandboxed, non-interactive CodeArts test with the selected model. Require the model to call the skill tool with name systematic-debugging and confirm that the completed tool call returns its Iron Law: NO FIXES WITHOUT ROOT CAUSE INVESTIGATION FIRST. A text answer without a successful skill tool event does not pass.
+10. Report the exact files changed, commands run, verification evidence, conflicts or limitations, and precise rollback steps. If any verification fails, stop and report failure instead of claiming success.
+```
 
-## Scope and limitations
+The manual procedure below describes exactly what the agent should do.
 
-Verified:
+## Install manually on Windows
 
-- project-local installation from the pinned Git tag;
-- loading the `.js` plugin wrapper;
-- discovery of all 14 upstream skills;
-- a real MiMo session calling `systematic-debugging` through the CodeArts `skill` tool;
-- a second clean-project reproduction and project-local rollback.
+### 1. Check prerequisites
 
-Not verified:
+- Install CodeArts CLI using the official [installation guide](https://support.huaweicloud.com/usermanual-cli/codeartsagent_cli_0005.html).
+- Install Node.js/npm and Git.
+- Run the steps from the target project's root directory.
 
-- CodeArts desktop/IDE client or Linux;
-- the automatic first-message bootstrap as a separate behavioral assertion;
-- complete workflows for every skill, especially subagent, todo, worktree, and review flows.
+```powershell
+codearts --version
+node --version
+npm --version
+git --version
+```
 
-Some Superpowers instructions use OpenCode terminology. CodeArts exposes many compatible tools, but complex workflows can still require host-specific judgment. Treat the verification as proof of installation, discovery, and core skill invocation—not proof that every workflow is fully portable.
-
-## Prerequisites
-
-1. Install and configure CodeArts CLI. See the official [installation](https://support.huaweicloud.com/usermanual-cli/codeartsagent_cli_0005.html), [configuration example](https://support.huaweicloud.com/usermanual-cli/codeartsagent_cli_00022.html), and [AK/SK configuration](https://support.huaweicloud.com/usermanual-cli/codeartsagent_cli_0026.html).
-2. Confirm `codearts --version` and `codearts models` work.
-3. Install Node.js/npm and Git.
-4. Run the following steps from the target project's root directory.
-
-Keep provider API keys and real Huawei Cloud credentials out of the project and Git history.
-
-## Install on Windows PowerShell
-
-### 1. Add the pinned dependency
+### 2. Add the pinned dependency
 
 Create `.codeartsdoer/package.json` if the project does not already have one:
 
@@ -73,7 +63,7 @@ Install without package lifecycle scripts:
 npm install --prefix .codeartsdoer --ignore-scripts --no-audit --no-fund
 ```
 
-### 2. Add the CodeArts plugin entrypoint
+### 3. Add the CodeArts plugin entrypoint
 
 Create `.codeartsdoer/plugins/superpowers.js`:
 
@@ -83,7 +73,7 @@ export { SuperpowersPlugin } from "superpowers";
 
 The maintained copy is [adapters/superpowers/superpowers.js](../../adapters/superpowers/superpowers.js).
 
-### 3. Install the skills into CodeArts' native directory
+### 4. Install the skills into CodeArts' native directory
 
 The following refuses to overwrite same-named skills already present in the project:
 
@@ -129,6 +119,20 @@ Expected project layout:
     writing-plans/
     writing-skills/
 ```
+
+## Configure CodeArts
+
+CodeArts model configuration is user-level; do not place model credentials in this project.
+
+1. Follow the official [configuration example](https://support.huaweicloud.com/usermanual-cli/codeartsagent_cli_00022.html) and [AK/SK configuration](https://support.huaweicloud.com/usermanual-cli/codeartsagent_cli_0026.html).
+2. Open a new PowerShell window if environment variables were added after CodeArts started.
+3. Confirm the model you intend to use appears in the `provider/model` format:
+
+```powershell
+codearts models
+```
+
+The examples below use `mimo/mimo-v2.5`; substitute your configured model ID.
 
 ## Verify
 
@@ -188,6 +192,28 @@ Preserve unrelated CodeArts plugins and skills. Remove only:
 - the dependency with `npm uninstall --prefix .codeartsdoer superpowers --ignore-scripts`.
 
 Review same-name directories before deletion if another integration may also have installed them. Finally, run the discovery command again and confirm that the project-local Superpowers skills are absent.
+
+## Verified compatibility
+
+| Item | Verified value |
+| --- | --- |
+| Compatibility | **Adapter Required** |
+| Upstream | [obra/superpowers](https://github.com/obra/superpowers) |
+| Upstream version | 6.3.0 (`b36e0829c6d0140e93cfef2ca599b1b07d4a7797`) |
+| License | MIT |
+| CodeArts | CLI 26.8.1 on Windows 11 |
+| Model used | `mimo/mimo-v2.5` |
+| Last verified | 2026-08-18 |
+
+The adapted installation was completed in two isolated projects. In both, a real MiMo session successfully called `systematic-debugging` through CodeArts' native `skill` tool and returned its Iron Law. Removing the project `.codeartsdoer` installation made the third-party skills disappear, confirming the rollback boundary.
+
+Why the adapter is required on CodeArts CLI 26.8.1:
+
+- The local `.js` plugin wrapper loaded successfully.
+- Skills added dynamically through the upstream plugin's `config.skills.paths` hook appeared in `codearts debug skill`, but were unavailable to the `skill` tool in a real `codearts run` session.
+- Copying the skills into `.codeartsdoer/skills` made them available at runtime.
+
+Not yet verified: CodeArts desktop/IDE, Linux, the automatic first-message bootstrap as a separate behavioral assertion, and complete workflows for all skills. Subagent, todo, worktree, and review workflows may require CodeArts-specific tool mapping because some upstream instructions use OpenCode terminology.
 
 ## Security notes
 

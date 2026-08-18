@@ -2,56 +2,46 @@
 
 [English](README.md)
 
-## 验证结论
+在项目中安装 Superpowers，即可为 CodeArts CLI 增加 14 个开发工作流 Skills。
 
-| 项目 | 已验证值 |
-| --- | --- |
-| 兼容状态 | **Adapter Required** |
-| 上游项目 | [obra/superpowers](https://github.com/obra/superpowers) |
-| 上游版本 | 6.3.0（`b36e0829c6d0140e93cfef2ca599b1b07d4a7797`） |
-| 许可证 | MIT |
-| CodeArts | Windows 11 上的 CLI 26.8.1 |
-| 测试模型 | `mimo/mimo-v2.5` |
-| 最后验证日期 | 2026-08-18 |
+## 让 Agent 帮你安装
 
-安装轻量的项目级适配器后，Superpowers Skills 可以通过 CodeArts 原生 `skill` 工具使用。该结果已在两个隔离项目中重复验证，并完成回滚测试。
+在 CodeArts 中打开目标项目，把下面整段提示词发给 Agent；执行安装前先检查它计划修改的内容：
 
-CodeArts CLI 26.8.1 不能直接照搬上游 OpenCode 安装方法：
+```text
+请在当前项目中为 CodeArts CLI 安装 Superpowers 6.3.0。
 
-- CodeArts 项目插件需要本地 `.js` 入口。
-- 上游插件通过 `config.skills.paths` 动态注册的 Skills 会出现在 `codearts debug skill` 中，但真实 `codearts run` 会话无法加载它们。
-- 因此还必须把上游 Skills 复制到 CodeArts 原生项目目录 `.codeartsdoer/skills`。
+要求：
+1. 只允许修改当前项目的 .codeartsdoer 目录。不要修改用户级 CodeArts 配置、全局 npm 包或凭据环境变量。
+2. 不要输出或记录 API Key、CODEARTS_CLI_AK、CODEARTS_CLI_SK 的值。
+3. 检查 codearts、Node.js、npm 和 Git 是否可用。运行 codearts models；只有无法判断应使用哪个模型时，才询问我选择 provider/model ID。
+4. 修改前检查已有的 .codeartsdoer/package.json、plugins 和 skills。采用合并方式，遇到同名 Skill 时停止，不要覆盖无关配置。
+5. 添加精确依赖 superpowers，来源固定为 git+https://github.com/obra/superpowers.git#v6.3.0，并在禁用 npm 生命周期脚本的情况下安装。
+6. 创建 .codeartsdoer/plugins/superpowers.js：使用 ES Module 从 superpowers 包重新导出 SuperpowersPlugin。
+7. 把包中全部 14 个 Skill 目录从 node_modules 复制到 .codeartsdoer/skills，不得覆盖已有目录。
+8. 使用 codearts debug skill 检查发现结果。
+9. 使用选定模型执行一次沙箱、非交互 CodeArts 测试。明确要求模型调用名为 systematic-debugging 的 skill 工具，并确认成功的工具调用返回 Iron Law：NO FIXES WITHOUT ROOT CAUSE INVESTIGATION FIRST。只有文本答案、没有成功的 skill 工具事件，不能算通过。
+10. 最后报告修改的准确文件、执行的命令、验证证据、冲突或限制，以及精确回滚步骤。如果任何验证失败，停止并如实报告，不能声明安装成功。
+```
 
-## 验证范围与限制
+下面的手动步骤就是 Agent 应当执行的完整流程。
 
-已验证：
+## Windows 手动安装
 
-- 从固定 Git Tag 进行项目级安装；
-- 加载 `.js` 插件包装入口；
-- 发现上游全部 14 个 Skills；
-- MiMo 在真实会话中通过 CodeArts `skill` 工具调用 `systematic-debugging`；
-- 第二个干净项目复现，以及项目级回滚。
+### 1. 检查前置条件
 
-未验证：
+- 按官方[安装说明](https://support.huaweicloud.com/usermanual-cli/codeartsagent_cli_0005.html)安装 CodeArts CLI。
+- 安装 Node.js/npm 和 Git。
+- 在目标项目根目录执行后续步骤。
 
-- CodeArts 桌面端/IDE 客户端和 Linux；
-- 把“首条消息自动注入”单独作为行为进行断言；
-- 每个 Skill 的完整工作流，尤其是子 Agent、Todo、Worktree 和代码审查流程。
+```powershell
+codearts --version
+node --version
+npm --version
+git --version
+```
 
-部分 Superpowers 指令使用 OpenCode 术语。CodeArts 提供了不少兼容工具，但复杂流程仍可能需要针对宿主做判断。因此，本次结果证明的是安装、发现和核心 Skill 调用可用，并不代表所有工作流都已完全移植。
-
-## 前置条件
-
-1. 安装并配置 CodeArts CLI。参考官方的[安装说明](https://support.huaweicloud.com/usermanual-cli/codeartsagent_cli_0005.html)、[配置示例](https://support.huaweicloud.com/usermanual-cli/codeartsagent_cli_00022.html)和 [AK/SK 配置](https://support.huaweicloud.com/usermanual-cli/codeartsagent_cli_0026.html)。
-2. 确认 `codearts --version` 和 `codearts models` 可正常运行。
-3. 安装 Node.js/npm 和 Git。
-4. 在目标项目根目录执行以下步骤。
-
-不要把模型 API Key 或真实华为云凭据写入项目或 Git 历史。
-
-## Windows PowerShell 安装步骤
-
-### 1. 添加固定版本依赖
+### 2. 添加固定版本依赖
 
 如果项目还没有 `.codeartsdoer/package.json`，创建以下文件：
 
@@ -73,7 +63,7 @@ CodeArts CLI 26.8.1 不能直接照搬上游 OpenCode 安装方法：
 npm install --prefix .codeartsdoer --ignore-scripts --no-audit --no-fund
 ```
 
-### 2. 添加 CodeArts 插件入口
+### 3. 添加 CodeArts 插件入口
 
 创建 `.codeartsdoer/plugins/superpowers.js`：
 
@@ -83,7 +73,7 @@ export { SuperpowersPlugin } from "superpowers";
 
 仓库中维护的副本见 [adapters/superpowers/superpowers.js](../../adapters/superpowers/superpowers.js)。
 
-### 3. 把 Skills 安装到 CodeArts 原生目录
+### 4. 把 Skills 安装到 CodeArts 原生目录
 
 以下脚本遇到项目中已有的同名 Skill 时会停止，不会直接覆盖：
 
@@ -129,6 +119,20 @@ foreach ($skillDirectory in $skillDirectories) {
     writing-plans/
     writing-skills/
 ```
+
+## 配置 CodeArts
+
+CodeArts 模型配置属于用户级配置，不要把模型凭据放进当前项目。
+
+1. 参考官方[配置示例](https://support.huaweicloud.com/usermanual-cli/codeartsagent_cli_00022.html)和 [AK/SK 配置](https://support.huaweicloud.com/usermanual-cli/codeartsagent_cli_0026.html)。
+2. 如果环境变量是在 CodeArts 启动后新增的，请重新打开 PowerShell。
+3. 确认准备使用的模型以 `provider/model` 格式出现在列表中：
+
+```powershell
+codearts models
+```
+
+后续示例使用 `mimo/mimo-v2.5`，请按实际情况替换成自己的模型 ID。
 
 ## 验证
 
@@ -188,6 +192,28 @@ Call the skill tool with name systematic-debugging, then investigate this failin
 - 使用 `npm uninstall --prefix .codeartsdoer superpowers --ignore-scripts` 移除依赖。
 
 如果其他集成可能安装过同名目录，删除前必须检查。最后重新运行发现命令，确认项目级 Superpowers Skills 已消失。
+
+## 已验证版本与结论
+
+| 项目 | 已验证值 |
+| --- | --- |
+| 兼容状态 | **Adapter Required** |
+| 上游项目 | [obra/superpowers](https://github.com/obra/superpowers) |
+| 上游版本 | 6.3.0（`b36e0829c6d0140e93cfef2ca599b1b07d4a7797`） |
+| 许可证 | MIT |
+| CodeArts | Windows 11 上的 CLI 26.8.1 |
+| 测试模型 | `mimo/mimo-v2.5` |
+| 最后验证日期 | 2026-08-18 |
+
+适配后的安装已在两个隔离项目中完成。两次测试里，MiMo 都通过 CodeArts 原生 `skill` 工具成功调用了 `systematic-debugging`，并返回其 Iron Law。临时移走项目 `.codeartsdoer` 后，第三方 Skills 会从发现结果中消失，说明回滚边界确实限制在项目内。
+
+CodeArts CLI 26.8.1 需要适配器的原因：
+
+- 本地 `.js` 插件包装入口加载成功。
+- 上游插件通过 `config.skills.paths` 动态加入的 Skills 会出现在 `codearts debug skill`，但真实 `codearts run` 会话的 `skill` 工具无法调用。
+- 把 Skills 复制到 `.codeartsdoer/skills` 后，运行时调用成功。
+
+尚未验证：CodeArts 桌面端/IDE、Linux、把“首条消息自动注入”单独作为行为进行断言，以及全部 Skills 的完整工作流。子 Agent、Todo、Worktree 和代码审查流程可能需要 CodeArts 专用工具映射，因为部分上游指令使用 OpenCode 术语。
 
 ## 安全说明
 
