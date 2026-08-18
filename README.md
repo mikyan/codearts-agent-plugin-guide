@@ -34,8 +34,22 @@
 | --- | --- | --- | --- | --- |
 | Ponytail | 4.9.0 | 26.8.1 | Adapter Required | [中文](guides/ponytail/README.md) · [English](guides/ponytail/README.en.md) |
 | Superpowers | 6.3.0 | 26.8.1 | Adapter Required | [中文](guides/superpowers/README.md) · [English](guides/superpowers/README.en.md) |
+| Anthropic `frontend-design` | `0a64e39` | 26.8.1 | Works | [中文](guides/anthropic-skills/README.md) · [English](guides/anthropic-skills/README.en.md) |
+| Addy Osmani `code-simplification` | `df1edb2` | 26.8.1 | Works | [中文](guides/addyosmani-agent-skills/README.md) · [English](guides/addyosmani-agent-skills/README.en.md) |
+| Obsidian `obsidian-markdown` | `a1dc48e` | 26.8.1 | Works | [中文](guides/obsidian-skills/README.md) · [English](guides/obsidian-skills/README.en.md) |
+| GitHub `commit-message-storyteller` | `318066d` | 26.8.1 | Works | [中文](guides/github-awesome-copilot/README.md) · [English](guides/github-awesome-copilot/README.en.md) |
+| Humanizer | `ebf637b` | 26.8.1 | Adapter Required | [中文](guides/humanizer/README.md) · [English](guides/humanizer/README.en.md) |
+| Scientific `experimental-design` | `9e8b0cb` | 26.8.1 | Partial | [中文](guides/scientific-agent-skills/README.md) · [English](guides/scientific-agent-skills/README.en.md) |
+| Vercel `vercel-react-best-practices` | `b8caa26` | 26.8.1 | Works | [中文](guides/vercel-agent-skills/README.md) · [English](guides/vercel-agent-skills/README.en.md) |
+| PM `prioritization-frameworks` | `18468a9` | 26.8.1 | Works | [中文](guides/pm-skills/README.md) · [English](guides/pm-skills/README.en.md) |
+| OpenAI `security-best-practices` | `49f948f` | 26.8.1 | Works | [中文](guides/openai-skills/README.md) · [English](guides/openai-skills/README.en.md) |
+| Google `gke-manifest-generation` | `65ef106` | 26.8.1 | Partial | [中文](guides/google-skills/README.md) · [English](guides/google-skills/README.en.md) |
 
-两个项目都已通过自定义 MiMo 模型在真实 CodeArts CLI 会话中完成项目级和个人级安装、调用与回滚。项目级结果在第二个隔离项目中复现，个人级结果从没有项目配置的独立目录验证。证据见 [2026-08-18 项目级记录](research/2026-08-18.md)和 [2026-08-19 个人级记录](research/2026-08-19.md)。
+十二个条目都已通过自定义 MiMo 模型在真实 CodeArts CLI 会话中完成安装、调用与回滚。项目级结果在第二个隔离项目中复现，个人级结果从没有项目配置的独立目录验证。`Partial` 和 `Adapter Required` 的具体边界以各自指南为准。证据见 [2026-08-18 项目级记录](research/2026-08-18.md)和 [2026-08-19 综合验证记录](research/2026-08-19.md)。
+
+## 可复用验证 Skill
+
+仓库提供 [CodeArts 插件兼容验证 Skill](skills/codearts-plugin-compatibility/SKILL.md)，把本轮确认的原生 Skills 安装、最小插件包装、动态路径转原生目录、个人级依赖隔离、双项目复现和精确回滚方法固化下来。后续候选应先按这套路径验证；只有实际证据不支持时再采用其他适配方式。
 
 ## 仓库结构
 
@@ -48,6 +62,8 @@ research/
   YYYY-MM-DD.en.md   # 英文记录
 adapters/
   <project>/         # 仅在确实需要兼容代码时添加
+skills/
+  <skill>/           # 仓库自身可复用的测试与发布流程
 ```
 
 ## 研究原则
