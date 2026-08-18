@@ -30,7 +30,12 @@ Compatibility claims are evidence-based. A guide must distinguish static analysi
 
 ## Guides
 
-No compatibility guides have been published yet. The first researched candidates will appear under [`guides/`](guides/).
+| Project | Upstream version | CodeArts CLI | Status | Guide |
+| --- | --- | --- | --- | --- |
+| Ponytail | 4.9.0 | 26.8.1 | Adapter Required | [English](guides/ponytail/README.md) · [中文](guides/ponytail/README.zh-CN.md) |
+| Superpowers | 6.3.0 | 26.8.1 | Adapter Required | [English](guides/superpowers/README.md) · [中文](guides/superpowers/README.zh-CN.md) |
+
+Both entries were installed and invoked through a real CodeArts CLI session with a custom MiMo model, reproduced in a second isolated project, and rollback-tested. See the [2026-08-18 evidence log](research/2026-08-18.md).
 
 ## Repository layout
 

@@ -30,7 +30,12 @@
 
 ## 指南索引
 
-目前还没有正式发布的兼容指南。首批研究结果将出现在 [`guides/`](guides/) 目录。
+| 项目 | 上游版本 | CodeArts CLI | 状态 | 指南 |
+| --- | --- | --- | --- | --- |
+| Ponytail | 4.9.0 | 26.8.1 | Adapter Required | [中文](guides/ponytail/README.zh-CN.md) · [English](guides/ponytail/README.md) |
+| Superpowers | 6.3.0 | 26.8.1 | Adapter Required | [中文](guides/superpowers/README.zh-CN.md) · [English](guides/superpowers/README.md) |
+
+两个项目都已通过自定义 MiMo 模型在真实 CodeArts CLI 会话中完成安装与调用，并在第二个隔离项目中复现成功及验证回滚。证据见 [2026-08-18 验证记录](research/2026-08-18.md)。
 
 ## 仓库结构
 
