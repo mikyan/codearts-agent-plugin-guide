@@ -35,7 +35,7 @@ Compatibility claims are evidence-based. A guide must distinguish static analysi
 | Ponytail | 4.9.0 | 26.8.1 | Adapter Required | [中文](guides/ponytail/README.md) · [English](guides/ponytail/README.en.md) |
 | Superpowers | 6.3.0 | 26.8.1 | Adapter Required | [中文](guides/superpowers/README.md) · [English](guides/superpowers/README.en.md) |
 
-Both entries were installed and invoked through a real CodeArts CLI session with a custom MiMo model, reproduced in a second isolated project, and rollback-tested. See the [2026-08-18 evidence log](research/2026-08-18.en.md).
+Both entries were installed, invoked, and rolled back in real CodeArts CLI sessions at project and user scope. Project results were reproduced in a second isolated project; user results were verified from an independent directory without project configuration. See the [2026-08-18 project log](research/2026-08-18.en.md) and [2026-08-19 user log](research/2026-08-19.en.md).
 
 ## Repository layout
 
@@ -55,7 +55,7 @@ adapters/
 - Prefer active, clearly licensed upstream projects with verifiable community signals.
 - Record source URLs, upstream versions, CodeArts versions, operating systems, and verification dates.
 - Inspect permissions, install scripts, downloaded binaries, external services, and credential requirements.
-- Never modify a user's global agent configuration as part of an unattended test.
+- Verify in isolated projects by default. User-scope tests must avoid existing user configuration, use independently removable dependency directories, and be repeated from a directory with no project override.
 - Keep the English and Chinese versions aligned on status, versions, limitations, and links.
 
 ## Contributing

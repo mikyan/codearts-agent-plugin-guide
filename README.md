@@ -35,7 +35,7 @@
 | Ponytail | 4.9.0 | 26.8.1 | Adapter Required | [中文](guides/ponytail/README.md) · [English](guides/ponytail/README.en.md) |
 | Superpowers | 6.3.0 | 26.8.1 | Adapter Required | [中文](guides/superpowers/README.md) · [English](guides/superpowers/README.en.md) |
 
-两个项目都已通过自定义 MiMo 模型在真实 CodeArts CLI 会话中完成安装与调用，并在第二个隔离项目中复现成功及验证回滚。证据见 [2026-08-18 验证记录](research/2026-08-18.md)。
+两个项目都已通过自定义 MiMo 模型在真实 CodeArts CLI 会话中完成项目级和个人级安装、调用与回滚。项目级结果在第二个隔离项目中复现，个人级结果从没有项目配置的独立目录验证。证据见 [2026-08-18 项目级记录](research/2026-08-18.md)和 [2026-08-19 个人级记录](research/2026-08-19.md)。
 
 ## 仓库结构
 
@@ -55,7 +55,7 @@ adapters/
 - 优先研究仍在活跃维护、许可证清晰且社区热度可验证的上游项目。
 - 记录来源链接、上游版本、CodeArts 版本、操作系统和验证日期。
 - 检查权限、安装脚本、下载的二进制文件、外部服务和凭据要求。
-- 无人值守测试不得修改用户的全局 Agent 配置。
+- 默认在隔离项目中验证；需要验证个人级安装时，必须避开现有用户配置、使用可精确回滚的独立依赖目录，并在无项目覆盖的目录复测。
 - 中英文版本中的状态、版本、限制和链接必须保持一致。
 
 ## 参与贡献
