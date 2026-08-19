@@ -44,8 +44,9 @@ Compatibility claims are evidence-based. A guide must distinguish static analysi
 | PM `prioritization-frameworks` | `18468a9` | 26.8.1 | Works | [中文](guides/pm-skills/README.md) · [English](guides/pm-skills/README.en.md) |
 | OpenAI `security-best-practices` | `49f948f` | 26.8.1 | Works | [中文](guides/openai-skills/README.md) · [English](guides/openai-skills/README.en.md) |
 | Google `gke-manifest-generation` | `65ef106` | 26.8.1 | Partial | [中文](guides/google-skills/README.md) · [English](guides/google-skills/README.en.md) |
+| i-have-adhd | `e7555fc` | 26.8.1 | Works | [中文](guides/i-have-adhd/README.md) · [English](guides/i-have-adhd/README.en.md) |
 
-All twelve entries were installed, invoked, and rolled back in real CodeArts CLI sessions. Project results were reproduced in a second isolated project; user results were verified from an independent directory without project configuration. Consult each guide for the exact `Partial` and `Adapter Required` boundary. See the [2026-08-18 project log](research/2026-08-18.en.md) and [2026-08-19 combined verification log](research/2026-08-19.en.md).
+All thirteen entries were installed, invoked, and rolled back in real CodeArts CLI sessions. Project results were reproduced in a second isolated project; user results were verified from an independent directory without a same-named project skill. Consult each guide for the exact `Partial` and `Adapter Required` boundary. See the [2026-08-18 project log](research/2026-08-18.en.md) and [2026-08-19 combined verification log](research/2026-08-19.en.md).
 
 ## Reusable verification skill
 

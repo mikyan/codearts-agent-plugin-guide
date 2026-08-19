@@ -44,8 +44,9 @@
 | PM `prioritization-frameworks` | `18468a9` | 26.8.1 | Works | [中文](guides/pm-skills/README.md) · [English](guides/pm-skills/README.en.md) |
 | OpenAI `security-best-practices` | `49f948f` | 26.8.1 | Works | [中文](guides/openai-skills/README.md) · [English](guides/openai-skills/README.en.md) |
 | Google `gke-manifest-generation` | `65ef106` | 26.8.1 | Partial | [中文](guides/google-skills/README.md) · [English](guides/google-skills/README.en.md) |
+| i-have-adhd | `e7555fc` | 26.8.1 | Works | [中文](guides/i-have-adhd/README.md) · [English](guides/i-have-adhd/README.en.md) |
 
-十二个条目都已通过自定义 MiMo 模型在真实 CodeArts CLI 会话中完成安装、调用与回滚。项目级结果在第二个隔离项目中复现，个人级结果从没有项目配置的独立目录验证。`Partial` 和 `Adapter Required` 的具体边界以各自指南为准。证据见 [2026-08-18 项目级记录](research/2026-08-18.md)和 [2026-08-19 综合验证记录](research/2026-08-19.md)。
+十三个条目都已通过自定义 MiMo 模型在真实 CodeArts CLI 会话中完成安装、调用与回滚。项目级结果在第二个隔离项目中复现，个人级结果从没有项目级同名 Skill 的独立目录验证。`Partial` 和 `Adapter Required` 的具体边界以各自指南为准。证据见 [2026-08-18 项目级记录](research/2026-08-18.md)和 [2026-08-19 综合验证记录](research/2026-08-19.md)。
 
 ## 可复用验证 Skill
 
