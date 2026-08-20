@@ -45,8 +45,13 @@
 | OpenAI `security-best-practices` | `49f948f` | 26.8.1 | Works | [中文](guides/openai-skills/README.md) · [English](guides/openai-skills/README.en.md) |
 | Google `gke-manifest-generation` | `65ef106` | 26.8.1 | Partial | [中文](guides/google-skills/README.md) · [English](guides/google-skills/README.en.md) |
 | i-have-adhd | `e7555fc` | 26.8.1 | Works | [中文](guides/i-have-adhd/README.md) · [English](guides/i-have-adhd/README.en.md) |
+| Agentic Awesome `ab-testing` | `e2b6ad1` | 26.8.1 | Works | [中文](guides/agentic-awesome-ab-testing/README.md) · [English](guides/agentic-awesome-ab-testing/README.en.md) |
+| Wshobson `api-design-principles` | `367cb6a` | 26.8.1 | Works | [中文](guides/wshobson-api-design-principles/README.md) · [English](guides/wshobson-api-design-principles/README.en.md) |
+| Claude Skills `team-communications` | `aa8d778` | 26.8.1 | Works | [中文](guides/claude-skills-team-communications/README.md) · [English](guides/claude-skills-team-communications/README.en.md) |
+| Khazix Writer | `7a5c493` | 26.8.1 | Works | [中文](guides/khazix-writer/README.md) · [English](guides/khazix-writer/README.en.md) |
+| Trail of Bits `guidelines-advisor` | `9b28133` | 26.8.1 | Works | [中文](guides/trailofbits-guidelines-advisor/README.md) · [English](guides/trailofbits-guidelines-advisor/README.en.md) |
 
-十三个条目都已通过自定义 MiMo 模型在真实 CodeArts CLI 会话中完成安装、调用与回滚。项目级结果在第二个隔离项目中复现，个人级结果从没有项目级同名 Skill 的独立目录验证。`Partial` 和 `Adapter Required` 的具体边界以各自指南为准。证据见 [2026-08-18 项目级记录](research/2026-08-18.md)和 [2026-08-19 综合验证记录](research/2026-08-19.md)。
+十八个条目都已通过自定义 MiMo 模型在真实 CodeArts CLI 会话中完成安装、调用与回滚。项目级结果在第二个隔离项目中复现，个人级结果从没有项目级同名 Skill 的独立目录验证。`Partial` 和 `Adapter Required` 的具体边界以各自指南为准。证据见 [2026-08-18 项目级记录](research/2026-08-18.md)、[2026-08-19 综合验证记录](research/2026-08-19.md)和 [2026-08-20 十项批次记录](research/2026-08-20.md)。
 
 ## 可复用验证 Skill
 

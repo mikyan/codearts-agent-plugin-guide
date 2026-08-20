@@ -45,8 +45,13 @@ Compatibility claims are evidence-based. A guide must distinguish static analysi
 | OpenAI `security-best-practices` | `49f948f` | 26.8.1 | Works | [中文](guides/openai-skills/README.md) · [English](guides/openai-skills/README.en.md) |
 | Google `gke-manifest-generation` | `65ef106` | 26.8.1 | Partial | [中文](guides/google-skills/README.md) · [English](guides/google-skills/README.en.md) |
 | i-have-adhd | `e7555fc` | 26.8.1 | Works | [中文](guides/i-have-adhd/README.md) · [English](guides/i-have-adhd/README.en.md) |
+| Agentic Awesome `ab-testing` | `e2b6ad1` | 26.8.1 | Works | [中文](guides/agentic-awesome-ab-testing/README.md) · [English](guides/agentic-awesome-ab-testing/README.en.md) |
+| Wshobson `api-design-principles` | `367cb6a` | 26.8.1 | Works | [中文](guides/wshobson-api-design-principles/README.md) · [English](guides/wshobson-api-design-principles/README.en.md) |
+| Claude Skills `team-communications` | `aa8d778` | 26.8.1 | Works | [中文](guides/claude-skills-team-communications/README.md) · [English](guides/claude-skills-team-communications/README.en.md) |
+| Khazix Writer | `7a5c493` | 26.8.1 | Works | [中文](guides/khazix-writer/README.md) · [English](guides/khazix-writer/README.en.md) |
+| Trail of Bits `guidelines-advisor` | `9b28133` | 26.8.1 | Works | [中文](guides/trailofbits-guidelines-advisor/README.md) · [English](guides/trailofbits-guidelines-advisor/README.en.md) |
 
-All thirteen entries were installed, invoked, and rolled back in real CodeArts CLI sessions. Project results were reproduced in a second isolated project; user results were verified from an independent directory without a same-named project skill. Consult each guide for the exact `Partial` and `Adapter Required` boundary. See the [2026-08-18 project log](research/2026-08-18.en.md) and [2026-08-19 combined verification log](research/2026-08-19.en.md).
+All eighteen entries were installed, invoked, and rolled back in real CodeArts CLI sessions. Project results were reproduced in a second isolated project; user results were verified from an independent directory without a same-named project skill. Consult each guide for the exact `Partial` and `Adapter Required` boundary. See the [2026-08-18 project log](research/2026-08-18.en.md), [2026-08-19 combined verification log](research/2026-08-19.en.md), and [2026-08-20 ten-candidate log](research/2026-08-20.en.md).
 
 ## Reusable verification skill
 
