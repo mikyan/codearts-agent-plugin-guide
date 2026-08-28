@@ -57,8 +57,13 @@
 | Matt Pocock `codebase-design` | `6654f6b` | 26.8.1 | Works | [中文](guides/mattpocock-codebase-design/README.md) · [English](guides/mattpocock-codebase-design/README.en.md) |
 | Matt Pocock `tdd` | `6654f6b` | 26.8.1 | Works | [中文](guides/mattpocock-tdd/README.md) · [English](guides/mattpocock-tdd/README.en.md) |
 | Matt Pocock `diagnosing-bugs` | `6654f6b` | 26.8.1 | Works | [中文](guides/mattpocock-diagnosing-bugs/README.md) · [English](guides/mattpocock-diagnosing-bugs/README.en.md) |
+| Matt Pocock `ask-matt` | `6654f6b` | 26.8.1 | Works | [中文](guides/mattpocock-ask-matt/README.md) · [English](guides/mattpocock-ask-matt/README.en.md) |
+| Matt Pocock `code-review` | `6654f6b` | 26.8.1 | Works | [中文](guides/mattpocock-code-review/README.md) · [English](guides/mattpocock-code-review/README.en.md) |
+| Matt Pocock `resolving-merge-conflicts` | `6654f6b` | 26.8.1 | Works | [中文](guides/mattpocock-resolving-merge-conflicts/README.md) · [English](guides/mattpocock-resolving-merge-conflicts/README.en.md) |
+| Matt Pocock `to-spec` | `6654f6b` | 26.8.1 | Works | [中文](guides/mattpocock-to-spec/README.md) · [English](guides/mattpocock-to-spec/README.en.md) |
+| Matt Pocock `to-tickets` | `6654f6b` | 26.8.1 | Works | [中文](guides/mattpocock-to-tickets/README.md) · [English](guides/mattpocock-to-tickets/README.en.md) |
 
-二十五个正式指南条目都已通过自定义 MiMo 模型在真实 CodeArts CLI 会话中完成安装、调用与回滚。项目级结果在第二个隔离项目中复现，个人级结果从没有项目级同名 Skill 的独立目录验证。未达指南门槛的候选仍记录在 research。最新证据见 [2026-08-28 Matt Pocock 十项批次记录](research/2026-08-28.md)，早期记录见 [research](research/)。
+三十个正式指南条目都已通过自定义 MiMo 模型在真实 CodeArts CLI 会话中完成安装、调用与回滚。项目级结果在第二个隔离项目中复现，个人级结果从没有项目级同名 Skill 的独立目录验证。未达指南门槛的候选仍记录在 research。最新证据见 [2026-08-28 两批 Matt Pocock 十项验证记录](research/2026-08-28.md)，早期记录见 [research](research/)。
 
 ## 可复用验证 Skill
 
