@@ -50,8 +50,15 @@
 | Claude Skills `team-communications` | `aa8d778` | 26.8.1 | Works | [中文](guides/claude-skills-team-communications/README.md) · [English](guides/claude-skills-team-communications/README.en.md) |
 | Khazix Writer | `7a5c493` | 26.8.1 | Works | [中文](guides/khazix-writer/README.md) · [English](guides/khazix-writer/README.en.md) |
 | Trail of Bits `guidelines-advisor` | `9b28133` | 26.8.1 | Works | [中文](guides/trailofbits-guidelines-advisor/README.md) · [English](guides/trailofbits-guidelines-advisor/README.en.md) |
+| Matt Pocock `grilling` | `6654f6b` | 26.8.1 | Works | [中文](guides/mattpocock-grilling/README.md) · [English](guides/mattpocock-grilling/README.en.md) |
+| Matt Pocock `grill-me` | `6654f6b` | 26.8.1 | Works | [中文](guides/mattpocock-grill-me/README.md) · [English](guides/mattpocock-grill-me/README.en.md) |
+| Matt Pocock `wait-what` | `6654f6b` | 26.8.1 | Works | [中文](guides/mattpocock-wait-what/README.md) · [English](guides/mattpocock-wait-what/README.en.md) |
+| Matt Pocock `handoff` | `6654f6b` | 26.8.1 | Works | [中文](guides/mattpocock-handoff/README.md) · [English](guides/mattpocock-handoff/README.en.md) |
+| Matt Pocock `codebase-design` | `6654f6b` | 26.8.1 | Works | [中文](guides/mattpocock-codebase-design/README.md) · [English](guides/mattpocock-codebase-design/README.en.md) |
+| Matt Pocock `tdd` | `6654f6b` | 26.8.1 | Works | [中文](guides/mattpocock-tdd/README.md) · [English](guides/mattpocock-tdd/README.en.md) |
+| Matt Pocock `diagnosing-bugs` | `6654f6b` | 26.8.1 | Works | [中文](guides/mattpocock-diagnosing-bugs/README.md) · [English](guides/mattpocock-diagnosing-bugs/README.en.md) |
 
-十八个条目都已通过自定义 MiMo 模型在真实 CodeArts CLI 会话中完成安装、调用与回滚。项目级结果在第二个隔离项目中复现，个人级结果从没有项目级同名 Skill 的独立目录验证。`Partial` 和 `Adapter Required` 的具体边界以各自指南为准。证据见 [2026-08-18 项目级记录](research/2026-08-18.md)、[2026-08-19 综合验证记录](research/2026-08-19.md)和 [2026-08-20 十项批次记录](research/2026-08-20.md)。
+二十五个正式指南条目都已通过自定义 MiMo 模型在真实 CodeArts CLI 会话中完成安装、调用与回滚。项目级结果在第二个隔离项目中复现，个人级结果从没有项目级同名 Skill 的独立目录验证。未达指南门槛的候选仍记录在 research。最新证据见 [2026-08-28 Matt Pocock 十项批次记录](research/2026-08-28.md)，早期记录见 [research](research/)。
 
 ## 可复用验证 Skill
 

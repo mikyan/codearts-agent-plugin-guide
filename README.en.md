@@ -50,8 +50,15 @@ Compatibility claims are evidence-based. A guide must distinguish static analysi
 | Claude Skills `team-communications` | `aa8d778` | 26.8.1 | Works | [中文](guides/claude-skills-team-communications/README.md) · [English](guides/claude-skills-team-communications/README.en.md) |
 | Khazix Writer | `7a5c493` | 26.8.1 | Works | [中文](guides/khazix-writer/README.md) · [English](guides/khazix-writer/README.en.md) |
 | Trail of Bits `guidelines-advisor` | `9b28133` | 26.8.1 | Works | [中文](guides/trailofbits-guidelines-advisor/README.md) · [English](guides/trailofbits-guidelines-advisor/README.en.md) |
+| Matt Pocock `grilling` | `6654f6b` | 26.8.1 | Works | [中文](guides/mattpocock-grilling/README.md) · [English](guides/mattpocock-grilling/README.en.md) |
+| Matt Pocock `grill-me` | `6654f6b` | 26.8.1 | Works | [中文](guides/mattpocock-grill-me/README.md) · [English](guides/mattpocock-grill-me/README.en.md) |
+| Matt Pocock `wait-what` | `6654f6b` | 26.8.1 | Works | [中文](guides/mattpocock-wait-what/README.md) · [English](guides/mattpocock-wait-what/README.en.md) |
+| Matt Pocock `handoff` | `6654f6b` | 26.8.1 | Works | [中文](guides/mattpocock-handoff/README.md) · [English](guides/mattpocock-handoff/README.en.md) |
+| Matt Pocock `codebase-design` | `6654f6b` | 26.8.1 | Works | [中文](guides/mattpocock-codebase-design/README.md) · [English](guides/mattpocock-codebase-design/README.en.md) |
+| Matt Pocock `tdd` | `6654f6b` | 26.8.1 | Works | [中文](guides/mattpocock-tdd/README.md) · [English](guides/mattpocock-tdd/README.en.md) |
+| Matt Pocock `diagnosing-bugs` | `6654f6b` | 26.8.1 | Works | [中文](guides/mattpocock-diagnosing-bugs/README.md) · [English](guides/mattpocock-diagnosing-bugs/README.en.md) |
 
-All eighteen entries were installed, invoked, and rolled back in real CodeArts CLI sessions. Project results were reproduced in a second isolated project; user results were verified from an independent directory without a same-named project skill. Consult each guide for the exact `Partial` and `Adapter Required` boundary. See the [2026-08-18 project log](research/2026-08-18.en.md), [2026-08-19 combined verification log](research/2026-08-19.en.md), and [2026-08-20 ten-candidate log](research/2026-08-20.en.md).
+All twenty-five formal guide entries were installed, invoked, and rolled back in real CodeArts CLI sessions. Project results were reproduced in a second isolated project; user results were verified from an independent directory without a same-named project skill. Candidates below the guide threshold remain documented in research. The latest evidence is the [2026-08-28 Matt Pocock ten-candidate batch](research/2026-08-28.en.md); earlier records are under [research](research/).
 
 ## Reusable verification skill
 
