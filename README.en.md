@@ -42,6 +42,15 @@ Compatibility claims are evidence-based. A guide must distinguish static analysi
 | Scientific `experimental-design` | `9e8b0cb` | 26.8.1 | Partial | [中文](guides/scientific-agent-skills/README.md) · [English](guides/scientific-agent-skills/README.en.md) |
 | Vercel `vercel-react-best-practices` | `b8caa26` | 26.8.1 | Works | [中文](guides/vercel-agent-skills/README.md) · [English](guides/vercel-agent-skills/README.en.md) |
 | PM `prioritization-frameworks` | `18468a9` | 26.8.1 | Works | [中文](guides/pm-skills/README.md) · [English](guides/pm-skills/README.en.md) |
+| PM `prioritize-assumptions` | `18468a9` | 26.8.1 | Works | [中文](guides/pm-prioritize-assumptions/README.md) · [English](guides/pm-prioritize-assumptions/README.en.md) |
+| PM `opportunity-solution-tree` | `18468a9` | 26.8.1 | Works | [中文](guides/pm-opportunity-solution-tree/README.md) · [English](guides/pm-opportunity-solution-tree/README.en.md) |
+| PM `product-vision` | `18468a9` | 26.8.1 | Works | [中文](guides/pm-product-vision/README.md) · [English](guides/pm-product-vision/README.en.md) |
+| PM `value-proposition` | `18468a9` | 26.8.1 | Works | [中文](guides/pm-value-proposition/README.md) · [English](guides/pm-value-proposition/README.en.md) |
+| PM `lean-canvas` | `18468a9` | 26.8.1 | Works | [中文](guides/pm-lean-canvas/README.md) · [English](guides/pm-lean-canvas/README.en.md) |
+| PM `swot-analysis` | `18468a9` | 26.8.1 | Works | [中文](guides/pm-swot-analysis/README.md) · [English](guides/pm-swot-analysis/README.en.md) |
+| PM `porters-five-forces` | `18468a9` | 26.8.1 | Works | [中文](guides/pm-porters-five-forces/README.md) · [English](guides/pm-porters-five-forces/README.en.md) |
+| PM `stakeholder-map` | `18468a9` | 26.8.1 | Works | [中文](guides/pm-stakeholder-map/README.md) · [English](guides/pm-stakeholder-map/README.en.md) |
+| PM `user-stories` | `18468a9` | 26.8.1 | Works | [中文](guides/pm-user-stories/README.md) · [English](guides/pm-user-stories/README.en.md) |
 | OpenAI `security-best-practices` | `49f948f` | 26.8.1 | Works | [中文](guides/openai-skills/README.md) · [English](guides/openai-skills/README.en.md) |
 | Google `gke-manifest-generation` | `65ef106` | 26.8.1 | Partial | [中文](guides/google-skills/README.md) · [English](guides/google-skills/README.en.md) |
 | i-have-adhd | `e7555fc` | 26.8.1 | Works | [中文](guides/i-have-adhd/README.md) · [English](guides/i-have-adhd/README.en.md) |
@@ -63,7 +72,7 @@ Compatibility claims are evidence-based. A guide must distinguish static analysi
 | Matt Pocock `to-spec` | `6654f6b` | 26.8.1 | Works | [中文](guides/mattpocock-to-spec/README.md) · [English](guides/mattpocock-to-spec/README.en.md) |
 | Matt Pocock `to-tickets` | `6654f6b` | 26.8.1 | Works | [中文](guides/mattpocock-to-tickets/README.md) · [English](guides/mattpocock-to-tickets/README.en.md) |
 
-All thirty formal guide entries were installed, invoked, and rolled back in real CodeArts CLI sessions. Project results were reproduced in a second isolated project; user results were verified from an independent directory without a same-named project skill. Candidates below the guide threshold remain documented in research. The latest evidence is in the [two Matt Pocock ten-candidate batches run on 2026-08-28](research/2026-08-28.en.md); earlier records are under [research](research/).
+All thirty-nine formal guide entries were installed, invoked, and rolled back in real CodeArts CLI sessions. Project results were reproduced in a second isolated project; user results were verified from an independent directory without a same-named project skill. Candidates below the guide threshold remain documented in research. The latest evidence is in the [2026-09-02 PM Skills ten-candidate verification](research/2026-09-02.en.md); earlier records are under [research](research/).
 
 ## Reusable verification skill
 

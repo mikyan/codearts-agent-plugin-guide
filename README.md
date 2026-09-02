@@ -42,6 +42,15 @@
 | Scientific `experimental-design` | `9e8b0cb` | 26.8.1 | Partial | [中文](guides/scientific-agent-skills/README.md) · [English](guides/scientific-agent-skills/README.en.md) |
 | Vercel `vercel-react-best-practices` | `b8caa26` | 26.8.1 | Works | [中文](guides/vercel-agent-skills/README.md) · [English](guides/vercel-agent-skills/README.en.md) |
 | PM `prioritization-frameworks` | `18468a9` | 26.8.1 | Works | [中文](guides/pm-skills/README.md) · [English](guides/pm-skills/README.en.md) |
+| PM `prioritize-assumptions` | `18468a9` | 26.8.1 | Works | [中文](guides/pm-prioritize-assumptions/README.md) · [English](guides/pm-prioritize-assumptions/README.en.md) |
+| PM `opportunity-solution-tree` | `18468a9` | 26.8.1 | Works | [中文](guides/pm-opportunity-solution-tree/README.md) · [English](guides/pm-opportunity-solution-tree/README.en.md) |
+| PM `product-vision` | `18468a9` | 26.8.1 | Works | [中文](guides/pm-product-vision/README.md) · [English](guides/pm-product-vision/README.en.md) |
+| PM `value-proposition` | `18468a9` | 26.8.1 | Works | [中文](guides/pm-value-proposition/README.md) · [English](guides/pm-value-proposition/README.en.md) |
+| PM `lean-canvas` | `18468a9` | 26.8.1 | Works | [中文](guides/pm-lean-canvas/README.md) · [English](guides/pm-lean-canvas/README.en.md) |
+| PM `swot-analysis` | `18468a9` | 26.8.1 | Works | [中文](guides/pm-swot-analysis/README.md) · [English](guides/pm-swot-analysis/README.en.md) |
+| PM `porters-five-forces` | `18468a9` | 26.8.1 | Works | [中文](guides/pm-porters-five-forces/README.md) · [English](guides/pm-porters-five-forces/README.en.md) |
+| PM `stakeholder-map` | `18468a9` | 26.8.1 | Works | [中文](guides/pm-stakeholder-map/README.md) · [English](guides/pm-stakeholder-map/README.en.md) |
+| PM `user-stories` | `18468a9` | 26.8.1 | Works | [中文](guides/pm-user-stories/README.md) · [English](guides/pm-user-stories/README.en.md) |
 | OpenAI `security-best-practices` | `49f948f` | 26.8.1 | Works | [中文](guides/openai-skills/README.md) · [English](guides/openai-skills/README.en.md) |
 | Google `gke-manifest-generation` | `65ef106` | 26.8.1 | Partial | [中文](guides/google-skills/README.md) · [English](guides/google-skills/README.en.md) |
 | i-have-adhd | `e7555fc` | 26.8.1 | Works | [中文](guides/i-have-adhd/README.md) · [English](guides/i-have-adhd/README.en.md) |
@@ -63,7 +72,7 @@
 | Matt Pocock `to-spec` | `6654f6b` | 26.8.1 | Works | [中文](guides/mattpocock-to-spec/README.md) · [English](guides/mattpocock-to-spec/README.en.md) |
 | Matt Pocock `to-tickets` | `6654f6b` | 26.8.1 | Works | [中文](guides/mattpocock-to-tickets/README.md) · [English](guides/mattpocock-to-tickets/README.en.md) |
 
-三十个正式指南条目都已通过自定义 MiMo 模型在真实 CodeArts CLI 会话中完成安装、调用与回滚。项目级结果在第二个隔离项目中复现，个人级结果从没有项目级同名 Skill 的独立目录验证。未达指南门槛的候选仍记录在 research。最新证据见 [2026-08-28 两批 Matt Pocock 十项验证记录](research/2026-08-28.md)，早期记录见 [research](research/)。
+三十九个正式指南条目都已通过自定义 MiMo 模型在真实 CodeArts CLI 会话中完成安装、调用与回滚。项目级结果在第二个隔离项目中复现，个人级结果从没有项目级同名 Skill 的独立目录验证。未达指南门槛的候选仍记录在 research。最新证据见 [2026-09-02 PM Skills 十项验证记录](research/2026-09-02.md)，早期记录见 [research](research/)。
 
 ## 可复用验证 Skill
 
