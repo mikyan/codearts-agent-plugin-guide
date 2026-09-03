@@ -51,6 +51,13 @@ Compatibility claims are evidence-based. A guide must distinguish static analysi
 | PM `porters-five-forces` | `18468a9` | 26.8.1 | Works | [中文](guides/pm-porters-five-forces/README.md) · [English](guides/pm-porters-five-forces/README.en.md) |
 | PM `stakeholder-map` | `18468a9` | 26.8.1 | Works | [中文](guides/pm-stakeholder-map/README.md) · [English](guides/pm-stakeholder-map/README.en.md) |
 | PM `user-stories` | `18468a9` | 26.8.1 | Works | [中文](guides/pm-user-stories/README.md) · [English](guides/pm-user-stories/README.en.md) |
+| PM `market-sizing` | `18468a9` | 26.8.1 | Works | [中文](guides/pm-market-sizing/README.md) · [English](guides/pm-market-sizing/README.en.md) |
+| PM `sql-queries` | `18468a9` | 26.8.1 | Works | [中文](guides/pm-sql-queries/README.md) · [English](guides/pm-sql-queries/README.en.md) |
+| PM `customer-journey-map` | `18468a9` | 26.8.1 | Works | [中文](guides/pm-customer-journey-map/README.md) · [English](guides/pm-customer-journey-map/README.en.md) |
+| PM `user-personas` | `18468a9` | 26.8.1 | Works | [中文](guides/pm-user-personas/README.md) · [English](guides/pm-user-personas/README.en.md) |
+| PM `north-star-metric` | `18468a9` | 26.8.1 | Works | [中文](guides/pm-north-star-metric/README.md) · [English](guides/pm-north-star-metric/README.en.md) |
+| PM `pricing-strategy` | `18468a9` | 26.8.1 | Works | [中文](guides/pm-pricing-strategy/README.md) · [English](guides/pm-pricing-strategy/README.en.md) |
+| PM `product-strategy` | `18468a9` | 26.8.1 | Works | [中文](guides/pm-product-strategy/README.md) · [English](guides/pm-product-strategy/README.en.md) |
 | OpenAI `security-best-practices` | `49f948f` | 26.8.1 | Works | [中文](guides/openai-skills/README.md) · [English](guides/openai-skills/README.en.md) |
 | Google `gke-manifest-generation` | `65ef106` | 26.8.1 | Partial | [中文](guides/google-skills/README.md) · [English](guides/google-skills/README.en.md) |
 | i-have-adhd | `e7555fc` | 26.8.1 | Works | [中文](guides/i-have-adhd/README.md) · [English](guides/i-have-adhd/README.en.md) |
@@ -72,7 +79,7 @@ Compatibility claims are evidence-based. A guide must distinguish static analysi
 | Matt Pocock `to-spec` | `6654f6b` | 26.8.1 | Works | [中文](guides/mattpocock-to-spec/README.md) · [English](guides/mattpocock-to-spec/README.en.md) |
 | Matt Pocock `to-tickets` | `6654f6b` | 26.8.1 | Works | [中文](guides/mattpocock-to-tickets/README.md) · [English](guides/mattpocock-to-tickets/README.en.md) |
 
-All thirty-nine formal guide entries were installed, invoked, and rolled back in real CodeArts CLI sessions. Project results were reproduced in a second isolated project; user results were verified from an independent directory without a same-named project skill. Candidates below the guide threshold remain documented in research. The latest evidence is in the [2026-09-02 PM Skills ten-candidate verification](research/2026-09-02.en.md); earlier records are under [research](research/).
+All forty-six formal guide entries were installed, invoked, and rolled back in real CodeArts CLI sessions. Project results were reproduced in a second isolated project; user results were verified from an independent directory without a same-named project skill. Candidates below the guide threshold remain documented in research. The latest evidence is in the [2026-09-03 PM Skills ten-candidate verification](research/2026-09-03.en.md); earlier records are under [research](research/).
 
 ## Reusable verification skill
 

@@ -51,6 +51,13 @@
 | PM `porters-five-forces` | `18468a9` | 26.8.1 | Works | [中文](guides/pm-porters-five-forces/README.md) · [English](guides/pm-porters-five-forces/README.en.md) |
 | PM `stakeholder-map` | `18468a9` | 26.8.1 | Works | [中文](guides/pm-stakeholder-map/README.md) · [English](guides/pm-stakeholder-map/README.en.md) |
 | PM `user-stories` | `18468a9` | 26.8.1 | Works | [中文](guides/pm-user-stories/README.md) · [English](guides/pm-user-stories/README.en.md) |
+| PM `market-sizing` | `18468a9` | 26.8.1 | Works | [中文](guides/pm-market-sizing/README.md) · [English](guides/pm-market-sizing/README.en.md) |
+| PM `sql-queries` | `18468a9` | 26.8.1 | Works | [中文](guides/pm-sql-queries/README.md) · [English](guides/pm-sql-queries/README.en.md) |
+| PM `customer-journey-map` | `18468a9` | 26.8.1 | Works | [中文](guides/pm-customer-journey-map/README.md) · [English](guides/pm-customer-journey-map/README.en.md) |
+| PM `user-personas` | `18468a9` | 26.8.1 | Works | [中文](guides/pm-user-personas/README.md) · [English](guides/pm-user-personas/README.en.md) |
+| PM `north-star-metric` | `18468a9` | 26.8.1 | Works | [中文](guides/pm-north-star-metric/README.md) · [English](guides/pm-north-star-metric/README.en.md) |
+| PM `pricing-strategy` | `18468a9` | 26.8.1 | Works | [中文](guides/pm-pricing-strategy/README.md) · [English](guides/pm-pricing-strategy/README.en.md) |
+| PM `product-strategy` | `18468a9` | 26.8.1 | Works | [中文](guides/pm-product-strategy/README.md) · [English](guides/pm-product-strategy/README.en.md) |
 | OpenAI `security-best-practices` | `49f948f` | 26.8.1 | Works | [中文](guides/openai-skills/README.md) · [English](guides/openai-skills/README.en.md) |
 | Google `gke-manifest-generation` | `65ef106` | 26.8.1 | Partial | [中文](guides/google-skills/README.md) · [English](guides/google-skills/README.en.md) |
 | i-have-adhd | `e7555fc` | 26.8.1 | Works | [中文](guides/i-have-adhd/README.md) · [English](guides/i-have-adhd/README.en.md) |
@@ -72,7 +79,7 @@
 | Matt Pocock `to-spec` | `6654f6b` | 26.8.1 | Works | [中文](guides/mattpocock-to-spec/README.md) · [English](guides/mattpocock-to-spec/README.en.md) |
 | Matt Pocock `to-tickets` | `6654f6b` | 26.8.1 | Works | [中文](guides/mattpocock-to-tickets/README.md) · [English](guides/mattpocock-to-tickets/README.en.md) |
 
-三十九个正式指南条目都已通过自定义 MiMo 模型在真实 CodeArts CLI 会话中完成安装、调用与回滚。项目级结果在第二个隔离项目中复现，个人级结果从没有项目级同名 Skill 的独立目录验证。未达指南门槛的候选仍记录在 research。最新证据见 [2026-09-02 PM Skills 十项验证记录](research/2026-09-02.md)，早期记录见 [research](research/)。
+四十六个正式指南条目都已通过自定义 MiMo 模型在真实 CodeArts CLI 会话中完成安装、调用与回滚。项目级结果在第二个隔离项目中复现，个人级结果从没有项目级同名 Skill 的独立目录验证。未达指南门槛的候选仍记录在 research。最新证据见 [2026-09-03 PM Skills 十项验证记录](research/2026-09-03.md)，早期记录见 [research](research/)。
 
 ## 可复用验证 Skill
 
