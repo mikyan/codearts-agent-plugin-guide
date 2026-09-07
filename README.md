@@ -79,7 +79,7 @@
 | Matt Pocock `to-spec` | `6654f6b` | 26.8.1 | Works | [中文](guides/mattpocock-to-spec/README.md) · [English](guides/mattpocock-to-spec/README.en.md) |
 | Matt Pocock `to-tickets` | `6654f6b` | 26.8.1 | Works | [中文](guides/mattpocock-to-tickets/README.md) · [English](guides/mattpocock-to-tickets/README.en.md) |
 
-四十六个正式指南条目都已通过自定义 MiMo 模型在真实 CodeArts CLI 会话中完成安装、调用与回滚。项目级结果在第二个隔离项目中复现，个人级结果从没有项目级同名 Skill 的独立目录验证。未达指南门槛的候选仍记录在 research。最新证据见 [2026-09-03 PM Skills 十项验证记录](research/2026-09-03.md)，早期记录见 [research](research/)。
+四十六个正式指南条目都已通过自定义 MiMo 模型在真实 CodeArts CLI 会话中完成安装、调用与回滚。项目级结果在第二个隔离项目中复现，个人级结果从没有项目级同名 Skill 的独立目录验证。未达指南门槛的候选仍记录在 research。最新证据见 [2026-09-07 PM Skills 十项验证记录](research/2026-09-07.md)，早期记录见 [research](research/)。
 
 ## 可复用验证 Skill
 
