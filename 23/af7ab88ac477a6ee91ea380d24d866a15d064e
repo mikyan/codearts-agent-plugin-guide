@@ -1,0 +1,50 @@
+research/2026-09-09.md
+  s_d34253337ebce7::t_9dfd3c50cc71ed 101
+  s_d34253337ebce7::t_dfe415d1b968fc 126
+  s_d34253337ebce7::t_84c36a63378986 1-17,19-100,102-106,108-112,114-118,120-125,127-159
+  s_d34253337ebce7::t_bbd217b0ff83ee 107,113
+  s_d34253337ebce7::t_afdeee084f02bb 18
+  s_d34253337ebce7::t_394188225ffb62 119
+guides/pm-summarize-interview/README.md
+  s_d34253337ebce7::t_7d7aea2cf6665f 170
+  s_d34253337ebce7::t_e099dc3a7590ea 1-105,145-169,171-173,192-251
+  s_d34253337ebce7::t_9db6acc51d234c 106-144
+  s_d34253337ebce7::t_b407a4b9d93942 174-191
+guides/pm-summarize-interview/README.en.md
+  s_d34253337ebce7::t_518960e191b30a 106-144
+  s_d34253337ebce7::t_7d7aea2cf6665f 170
+  s_d34253337ebce7::t_e571a639b2652f 1-105,145-169,171-173,192-251
+  s_d34253337ebce7::t_b407a4b9d93942 174-191
+research/2026-09-09.en.md
+  s_d34253337ebce7::t_215e153d9bc4be 1-157
+README.md
+  s_d34253337ebce7::t_5988ec641d91c4 82-83,85
+guides/pm-dummy-dataset/README.md
+  s_d34253337ebce7::t_9f1a07a1c20db9 1-105,145-171,173-175,194-257
+  s_d34253337ebce7::t_b407a4b9d93942 176-193
+  s_d34253337ebce7::t_7d7aea2cf6665f 172
+  s_d34253337ebce7::t_49969c317ab769 106-144
+guides/pm-dummy-dataset/README.en.md
+  s_d34253337ebce7::t_7d7aea2cf6665f 172
+  s_d34253337ebce7::t_6cb4132891807c 106-144
+  s_d34253337ebce7::t_b407a4b9d93942 176-193
+  s_d34253337ebce7::t_99d01f65dae3a2 1-105,145-171,173-175,194-257
+README.en.md
+  s_d34253337ebce7::t_5988ec641d91c4 82-83,85
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "development:1.7.3",
+  "base_commit_sha": "23af7ab88ac477a6ee91ea380d24d866a15d064e",
+  "prompts": {},
+  "sessions": {
+    "s_d34253337ebce7": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a08454-3de0-7801-a832-12b609eb8ec5",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "AI_BA <ai_ball@outlook.com>"
+    }
+  }
+}
