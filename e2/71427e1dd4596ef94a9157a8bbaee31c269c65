@@ -1,0 +1,37 @@
+guides/pm-intended-vs-implemented/README.md
+  s_ed7839f4470d22::t_223d57cb4eed33 1-74,78-163
+  s_ed7839f4470d22::t_5d1cd06eb7660e 75-77
+research/2026-09-10.md
+  s_ed7839f4470d22::t_b856997aba35eb 1-96
+guides/pm-intended-vs-implemented/README.en.md
+  s_ed7839f4470d22::t_3676da2806fd59 1-74,78-163
+  s_ed7839f4470d22::t_5d1cd06eb7660e 75-77
+guides/pm-summarize-meeting/README.en.md
+  s_ed7839f4470d22::t_8cf6e91863e6c1 1-74,78-165
+  s_ed7839f4470d22::t_5d1cd06eb7660e 75-77
+research/2026-09-10.en.md
+  s_ed7839f4470d22::t_4b795fd2d32d2f 1-96
+README.md
+  s_ed7839f4470d22::t_86cdbec388bce3 84-85,87
+README.en.md
+  s_ed7839f4470d22::t_86cdbec388bce3 84-85,87
+guides/pm-summarize-meeting/README.md
+  s_ed7839f4470d22::t_d1736f61c61c09 1-74,78-165
+  s_ed7839f4470d22::t_5d1cd06eb7660e 75-77
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "development:1.7.3",
+  "base_commit_sha": "e271427e1dd4596ef94a9157a8bbaee31c269c65",
+  "prompts": {},
+  "sessions": {
+    "s_ed7839f4470d22": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0897a-7a2d-7292-a8d4-5905a31eba55",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "AI_BA <ai_ball@outlook.com>"
+    }
+  }
+}
