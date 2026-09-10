@@ -81,8 +81,10 @@ Compatibility claims are evidence-based. A guide must distinguish static analysi
 | PM `product-name` | `18468a9` | 26.8.1 | Works | [中文](guides/pm-product-name/README.md) · [English](guides/pm-product-name/README.en.md) |
 | PM `dummy-dataset` | `18468a9` | 26.8.1 | Works | [中文](guides/pm-dummy-dataset/README.md) · [English](guides/pm-dummy-dataset/README.en.md) |
 | PM `summarize-interview` | `18468a9` | 26.8.1 | Works | [中文](guides/pm-summarize-interview/README.md) · [English](guides/pm-summarize-interview/README.en.md) |
+| PM `intended-vs-implemented` | `18468a9` | 26.8.1 | Works | [中文](guides/pm-intended-vs-implemented/README.md) · [English](guides/pm-intended-vs-implemented/README.en.md) |
+| PM `summarize-meeting` | `18468a9` | 26.8.1 | Works | [中文](guides/pm-summarize-meeting/README.md) · [English](guides/pm-summarize-meeting/README.en.md) |
 
-All forty-nine formal guide entries were installed, invoked, and rolled back in real CodeArts CLI sessions. Project results were reproduced in a second isolated project; user results were verified from an independent directory without a same-named project skill. Candidates below the guide threshold remain documented in research. The latest evidence is in the [2026-09-09 PM Skills ten-candidate verification](research/2026-09-09.en.md); earlier records are under [research](research/).
+All fifty-one formal guide entries were installed, invoked, and rolled back in real CodeArts CLI sessions. Project results were reproduced in a second isolated project; user results were verified from an independent directory without a same-named project skill. Candidates below the guide threshold remain documented in research. The latest evidence is in the [2026-09-10 PM and Dazbo Skills ten-candidate verification](research/2026-09-10.en.md); earlier records are under [research](research/).
 
 ## Reusable verification skill
 

@@ -81,8 +81,10 @@
 | PM `product-name` | `18468a9` | 26.8.1 | Works | [中文](guides/pm-product-name/README.md) · [English](guides/pm-product-name/README.en.md) |
 | PM `dummy-dataset` | `18468a9` | 26.8.1 | Works | [中文](guides/pm-dummy-dataset/README.md) · [English](guides/pm-dummy-dataset/README.en.md) |
 | PM `summarize-interview` | `18468a9` | 26.8.1 | Works | [中文](guides/pm-summarize-interview/README.md) · [English](guides/pm-summarize-interview/README.en.md) |
+| PM `intended-vs-implemented` | `18468a9` | 26.8.1 | Works | [中文](guides/pm-intended-vs-implemented/README.md) · [English](guides/pm-intended-vs-implemented/README.en.md) |
+| PM `summarize-meeting` | `18468a9` | 26.8.1 | Works | [中文](guides/pm-summarize-meeting/README.md) · [English](guides/pm-summarize-meeting/README.en.md) |
 
-四十九个正式指南条目都已通过自定义 MiMo 模型在真实 CodeArts CLI 会话中完成安装、调用与回滚。项目级结果在第二个隔离项目中复现，个人级结果从没有项目级同名 Skill 的独立目录验证。未达指南门槛的候选仍记录在 research。最新证据见 [2026-09-09 PM Skills 十项验证记录](research/2026-09-09.md)，早期记录见 [research](research/)。
+五十一个正式指南条目都已通过自定义 MiMo 模型在真实 CodeArts CLI 会话中完成安装、调用与回滚。项目级结果在第二个隔离项目中复现，个人级结果从没有项目级同名 Skill 的独立目录验证。未达指南门槛的候选仍记录在 research。最新证据见 [2026-09-10 PM 与 Dazbo Skills 十项验证记录](research/2026-09-10.md)，早期记录见 [research](research/)。
 
 ## 可复用验证 Skill
 
