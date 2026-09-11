@@ -1,0 +1,43 @@
+guides/agentic-awesome-read-all-adrs/README.md
+  s_e36ef025a348f6::t_f48dca7af935c5 1-65,67-109
+  s_e36ef025a348f6::t_2054649b64df2b 66
+guides/agentic-awesome-read-all-adrs/README.en.md
+  s_e36ef025a348f6::t_f48dca7af935c5 1-61,63-101
+  s_e36ef025a348f6::t_2054649b64df2b 62
+guides/agentic-awesome-ui-lint/README.en.md
+  s_e36ef025a348f6::t_4dca151f9b3d4e 1-65,67-105
+  s_e36ef025a348f6::t_2054649b64df2b 66
+guides/agentic-awesome-effective-agent-skills/README.en.md
+  s_e36ef025a348f6::t_2054649b64df2b 62
+  s_e36ef025a348f6::t_3f7fcf969792fb 1-61,63-101
+research/2026-09-11.md
+  s_e36ef025a348f6::t_66139b6a0d948e 1-83
+README.md
+  s_e36ef025a348f6::t_f11950ee6881e6 65-67,90
+research/2026-09-11.en.md
+  s_e36ef025a348f6::t_66139b6a0d948e 1-76
+guides/agentic-awesome-ui-lint/README.md
+  s_e36ef025a348f6::t_4dca151f9b3d4e 1-65,67-109
+  s_e36ef025a348f6::t_2054649b64df2b 66
+guides/agentic-awesome-effective-agent-skills/README.md
+  s_e36ef025a348f6::t_3f7fcf969792fb 1-65,67-109
+  s_e36ef025a348f6::t_2054649b64df2b 66
+README.en.md
+  s_e36ef025a348f6::t_f11950ee6881e6 65-67,90
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "development:1.7.3",
+  "base_commit_sha": "aa9a36ea35520455d33463b4d9d6e92bcd2d10a9",
+  "prompts": {},
+  "sessions": {
+    "s_e36ef025a348f6": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a08ea1-360e-7ca0-a90a-58bd8cf76bff",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "AI_BA <ai_ball@outlook.com>"
+    }
+  }
+}
