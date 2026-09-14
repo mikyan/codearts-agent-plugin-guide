@@ -65,6 +65,7 @@
 | Agentic Awesome `ui-lint` | `bdfbf79` | 26.8.1 | Works | [中文](guides/agentic-awesome-ui-lint/README.md) · [English](guides/agentic-awesome-ui-lint/README.en.md) |
 | Agentic Awesome `read-all-adrs` | `bdfbf79` | 26.8.1 | Works | [中文](guides/agentic-awesome-read-all-adrs/README.md) · [English](guides/agentic-awesome-read-all-adrs/README.en.md) |
 | Agentic Awesome `effective-agent-skills` | `bdfbf79` | 26.8.1 | Works | [中文](guides/agentic-awesome-effective-agent-skills/README.md) · [English](guides/agentic-awesome-effective-agent-skills/README.en.md) |
+| Agentic Awesome `documentation` | `2fce708` | 26.8.1 | Works | [中文](guides/agentic-awesome-documentation/README.md) · [English](guides/agentic-awesome-documentation/README.en.md) |
 | Wshobson `api-design-principles` | `367cb6a` | 26.8.1 | Works | [中文](guides/wshobson-api-design-principles/README.md) · [English](guides/wshobson-api-design-principles/README.en.md) |
 | Claude Skills `team-communications` | `aa8d778` | 26.8.1 | Works | [中文](guides/claude-skills-team-communications/README.md) · [English](guides/claude-skills-team-communications/README.en.md) |
 | Khazix Writer | `7a5c493` | 26.8.1 | Works | [中文](guides/khazix-writer/README.md) · [English](guides/khazix-writer/README.en.md) |
@@ -87,7 +88,7 @@
 | PM `intended-vs-implemented` | `18468a9` | 26.8.1 | Works | [中文](guides/pm-intended-vs-implemented/README.md) · [English](guides/pm-intended-vs-implemented/README.en.md) |
 | PM `summarize-meeting` | `18468a9` | 26.8.1 | Works | [中文](guides/pm-summarize-meeting/README.md) · [English](guides/pm-summarize-meeting/README.en.md) |
 
-五十四个正式指南条目都已通过自定义 MiMo 模型在真实 CodeArts CLI 会话中完成安装、调用与回滚。项目级结果在第二个隔离项目中复现，个人级结果从没有项目级同名 Skill 的独立目录验证。未达指南门槛的候选仍记录在 research。最新证据见 [2026-09-11 Agentic Awesome 十项验证记录](research/2026-09-11.md)，早期记录见 [research](research/)。
+五十五个正式指南条目都已通过自定义 MiMo 模型在真实 CodeArts CLI 会话中完成安装、调用与回滚。项目级结果在第二个隔离项目中复现，个人级结果从没有项目级同名 Skill 的独立目录验证。未达指南门槛的候选仍记录在 research。最新证据见 [2026-09-14 Agentic Awesome v17.2.0 十项验证记录](research/2026-09-14.md)，早期记录见 [research](research/)。
 
 ## 可复用验证 Skill
 
