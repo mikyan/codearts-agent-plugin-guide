@@ -1,0 +1,94 @@
+# 在 CodeArts CLI 中使用 testing-patterns
+
+[English](README.en.md)
+
+安装 `testing-patterns` Skill，用行为测试、边界值和可覆盖工厂设计 Jest 测试。
+
+## 选择安装范围
+
+项目级 `<项目>/.codeartsdoer` 适合单仓库测试约定；个人级 `~/.codeartsdoer` 适合跨项目复用。二选一；项目级同名 Skill 优先。目标 Skill、vendor 或另一范围同名 Skill 已存在时停止。
+
+## 让 Agent 帮你安装
+
+### 项目级提示词
+
+```text
+在当前 Windows 项目中安装并验证项目级 testing-patterns。固定来源 https://github.com/sickn33/agentic-awesome-skills.git，release v17.2.0，Commit 2fce708d4f3871ccce3d705b4748371f94c730ec，源目录 skills/testing-patterns。
+先运行 codearts --version、git --version、codearts models，让我选择真实可用的 <model>；不得读取或打印凭据。令 $root=Join-Path (Get-Location) '.codeartsdoer'，$source=Join-Path $root 'vendor\agentic-awesome-testing-patterns'，$target=Join-Path $root 'skills\testing-patterns'。检查 $source、$target 和 ~/.codeartsdoer/skills/testing-patterns；任一冲突就停止。只创建 $source 和 $target，不修改 package.json、codearts_cli.json、凭据、插件或其他 Skill。
+从项目根依次执行：New-Item -ItemType Directory -Path (Split-Path $source -Parent),(Split-Path $target -Parent) -Force | Out-Null；git clone --filter=blob:none --no-checkout https://github.com/sickn33/agentic-awesome-skills.git $source；git -C $source config core.longpaths true；git -C $source fetch --depth 1 origin 2fce708d4f3871ccce3d705b4748371f94c730ec；git -C $source sparse-checkout init --no-cone；git -C $source sparse-checkout set --no-cone '/skills/testing-patterns/' '/LICENSE' '/LICENSE-CONTENT' '/TERMS.md'；git -C $source checkout --detach 2fce708d4f3871ccce3d705b4748371f94c730ec。确认 git -C $source rev-parse HEAD 精确等于该 Commit，再执行 Copy-Item -LiteralPath (Join-Path $source 'skills\testing-patterns') -Destination $target -Recurse。
+运行 codearts debug skill；唯一生效的 testing-patterns location 必须是 $target/SKILL.md。把 <model> 换成已选 ID，原样执行：codearts run --format json --model "<model>" 'Call the skill tool exactly once with name testing-patterns. Use no other tool, do not access the network, and do not read or write files. Design Jest tests for a pure function shipping(total, member): members pay 0; non-members pay 5 when total is below 50 and 0 otherwise. Return exact sections BEHAVIORS, TEST CASES, FACTORY, BOUNDARIES, ANTI-PATTERNS, and LIMITS. Cover totals 49.99 and 50, both member states, preserve behavior-focused assertions, use a small input factory with overrides, and state the tests were not executed.'
+只有退出码 0、恰好一个来自 $target 的 name=testing-patterns/status=completed 事件、没有其他工具事件、最终文本含六个章节、两个边界值、两种会员状态、支持 overrides 的工厂和未执行声明时通过。报告 Commit、绝对路径和事件。卸载只能删除精确 $target 与 $source，再用 codearts debug skill 确认旧路径消失；禁止删除整个 .codeartsdoer 或根配置。
+```
+
+### 个人级提示词
+
+```text
+为当前 Windows 用户安装并验证个人级 testing-patterns。固定来源 https://github.com/sickn33/agentic-awesome-skills.git，release v17.2.0，Commit 2fce708d4f3871ccce3d705b4748371f94c730ec，源目录 skills/testing-patterns。
+运行 codearts --version、git --version、codearts models，让我选择 <model>；不得读取或打印凭据。令 $root=Join-Path ([Environment]::GetFolderPath('UserProfile')) '.codeartsdoer'，$source=Join-Path $root 'vendor\agentic-awesome-testing-patterns'，$target=Join-Path $root 'skills\testing-patterns'。确认 $source、$target 及全新 consumer 的 .codeartsdoer/skills/testing-patterns 不存在；冲突时停止。不得修改用户 package.json、codearts_cli.json、凭据、插件或项目配置。
+依次执行：New-Item -ItemType Directory -Path (Split-Path $source -Parent),(Split-Path $target -Parent) -Force | Out-Null；git clone --filter=blob:none --no-checkout https://github.com/sickn33/agentic-awesome-skills.git $source；git -C $source config core.longpaths true；git -C $source fetch --depth 1 origin 2fce708d4f3871ccce3d705b4748371f94c730ec；git -C $source sparse-checkout init --no-cone；git -C $source sparse-checkout set --no-cone '/skills/testing-patterns/' '/LICENSE' '/LICENSE-CONTENT' '/TERMS.md'；git -C $source checkout --detach 2fce708d4f3871ccce3d705b4748371f94c730ec；确认 HEAD 后，Copy-Item -LiteralPath (Join-Path $source 'skills\testing-patterns') -Destination $target -Recurse。
+进入没有同名项目 Skill 的全新 consumer；唯一 codearts debug skill location 必须是 $target/SKILL.md。把 <model> 换成已选 ID，原样运行项目级提示词中的 codearts run，并沿用相同成功判据。卸载只删除精确 $target、$source 和核对后的 consumer；不得删除用户根、根配置、凭据或其他 Skill。
+```
+
+## Windows 手动安装
+
+```powershell
+$root=Join-Path (Get-Location) '.codeartsdoer' # 个人级：Join-Path ([Environment]::GetFolderPath('UserProfile')) '.codeartsdoer'
+$source=Join-Path $root 'vendor\agentic-awesome-testing-patterns'; $target=Join-Path $root 'skills\testing-patterns'
+if((Test-Path $source)-or(Test-Path $target)){throw 'Collision'}
+New-Item -ItemType Directory -Path (Split-Path $source -Parent),(Split-Path $target -Parent) -Force | Out-Null
+git clone --filter=blob:none --no-checkout https://github.com/sickn33/agentic-awesome-skills.git $source
+git -C $source config core.longpaths true
+git -C $source fetch --depth 1 origin 2fce708d4f3871ccce3d705b4748371f94c730ec
+git -C $source sparse-checkout init --no-cone
+git -C $source sparse-checkout set --no-cone '/skills/testing-patterns/' '/LICENSE' '/LICENSE-CONTENT' '/TERMS.md'
+git -C $source checkout --detach 2fce708d4f3871ccce3d705b4748371f94c730ec
+if((git -C $source rev-parse HEAD).Trim() -ne '2fce708d4f3871ccce3d705b4748371f94c730ec'){throw 'Commit mismatch'}
+Copy-Item -LiteralPath (Join-Path $source 'skills\testing-patterns') -Destination $target -Recurse
+```
+
+## CodeArts 配置
+
+先运行 `codearts --version`、`git --version`、`codearts models`，选择可用的 `provider/model`。本 Skill 不要求修改根配置。
+
+## 验证
+
+用 `codearts debug skill` 核对唯一来源，再运行完整 smoke test。成功要求唯一 completed 目标 Skill 事件、无额外工具、边界和会员状态齐全、工厂支持覆盖，并明确未执行测试。
+
+## 使用
+
+```text
+Use testing-patterns. 为这个纯函数设计行为导向的 Jest 测试；先列业务行为和关键边界，再给最小测试用例与支持 overrides 的数据工厂，明确哪些测试尚未执行。
+```
+
+## 更新
+
+先核对 `git -C $source rev-parse HEAD`。更新 Commit 前重新审查许可证和整个 Skill 目录，并重做两个项目、个人范围与回滚。
+
+## 卸载
+
+只删除 `$root/skills/testing-patterns` 与 `$root/vendor/agentic-awesome-testing-patterns`，再确认旧路径从 `codearts debug skill` 消失。不要删除 `.codeartsdoer` 根或其他 Skill。
+
+## 已验证版本与结论
+
+| 项目 | 值 |
+| --- | --- |
+| 结论 | **Works** |
+| 上游 | `v17.2.0` / `2fce708d4f3871ccce3d705b4748371f94c730ec` |
+| Skill / SHA-256 | `testing-patterns` / `E71011053D6603A4A538ABBC546C14F3699D3CE0B5E27C8DE0E9994FCA4EA1E0` |
+| 内容许可证 | CC BY 4.0 |
+| 环境与范围 | CodeArts CLI 26.8.1；Windows 11 Build 26200；`mimo/mimo-v2.5`；两个项目 + 个人级；2026-09-15 |
+
+## 已知限制
+
+只验证了纯函数的只读测试设计，没有创建测试文件、运行 Jest 或验证项目配置。Skill 示例偏向 Jest/React Native；用于其他测试框架时需改写语法并重新验收。
+
+## 安全
+
+固定目录只有一个 6,603 字节的 `SKILL.md`；无依赖、脚本、二进制、下载器或遥测。三次调用都只有目标 Skill 事件。
+
+## 证据与来源
+
+- [中文研究记录](../../research/2026-09-15.md) · [English](../../research/2026-09-15.en.md)
+- [固定 Skill 目录](https://github.com/sickn33/agentic-awesome-skills/tree/2fce708d4f3871ccce3d705b4748371f94c730ec/skills/testing-patterns)
+- [内容许可证](https://github.com/sickn33/agentic-awesome-skills/blob/2fce708d4f3871ccce3d705b4748371f94c730ec/LICENSE-CONTENT)
+- [CodeArts CLI Skills 官方文档](https://support.huaweicloud.com/usermanual-cli/codeartsagent_cli_0019.html)
