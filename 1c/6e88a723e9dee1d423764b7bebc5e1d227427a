@@ -1,0 +1,41 @@
+guides/agentic-awesome-debugging-strategies/README.md
+  s_668aaea6cc7423::t_827a2f827d6a21 1-94
+guides/agentic-awesome-testing-patterns/README.en.md
+  s_668aaea6cc7423::t_a6a01b3a78410e 91
+  s_668aaea6cc7423::t_c4aa9539839f62 1-90,92-94
+README.en.md
+  s_668aaea6cc7423::t_50bb79dfd2e8ce 69-71,94
+guides/agentic-awesome-code-review-excellence/README.en.md
+  s_668aaea6cc7423::t_a6a01b3a78410e 94
+  s_668aaea6cc7423::t_f3dedc11887d42 1-93,95-97
+research/2026-09-15.md
+  s_668aaea6cc7423::t_0cf1dedbc76b47 1-84
+research/2026-09-15.en.md
+  s_668aaea6cc7423::t_0cf1dedbc76b47 1-50,52-84
+  s_668aaea6cc7423::t_4bc4fc318fcf54 51
+guides/agentic-awesome-code-review-excellence/README.md
+  s_668aaea6cc7423::t_f3dedc11887d42 1-97
+guides/agentic-awesome-debugging-strategies/README.en.md
+  s_668aaea6cc7423::t_827a2f827d6a21 1-90,92-94
+  s_668aaea6cc7423::t_a6a01b3a78410e 91
+README.md
+  s_668aaea6cc7423::t_50bb79dfd2e8ce 69-71,94
+guides/agentic-awesome-testing-patterns/README.md
+  s_668aaea6cc7423::t_c4aa9539839f62 1-94
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "development:1.7.3",
+  "base_commit_sha": "1c6e88a723e9dee1d423764b7bebc5e1d227427a",
+  "prompts": {},
+  "sessions": {
+    "s_668aaea6cc7423": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0a33a-8d3a-79a1-afb7-cb4bc42c059e",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "AI_BA <ai_ball@outlook.com>"
+    }
+  }
+}
