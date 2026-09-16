@@ -1,0 +1,46 @@
+guides/agentic-awesome-decision-navigator/README.en.md
+  s_3e8c7b6b86bd16::t_c610ebb8cf7cc3 1-28,30-93,95-97
+  s_3e8c7b6b86bd16::t_0de0ff8d331695 94
+  s_3e8c7b6b86bd16::t_2afd2a9f363c52 29
+research/2026-09-16.en.md
+  s_3e8c7b6b86bd16::t_d37a992b55a7d6 1-83
+research/2026-09-16.md
+  s_3e8c7b6b86bd16::t_d37a992b55a7d6 1-83
+guides/agentic-awesome-api-analyzer/README.en.md
+  s_3e8c7b6b86bd16::t_24b7de24441db5 1-27,30-93,95-97
+  s_3e8c7b6b86bd16::t_2afd2a9f363c52 28-29
+  s_3e8c7b6b86bd16::t_0de0ff8d331695 94
+guides/agentic-awesome-contract-propagation-audit/README.en.md
+  s_3e8c7b6b86bd16::t_0de0ff8d331695 95
+  s_3e8c7b6b86bd16::t_4937ccf2e59259 1-28,30-94,96-98
+  s_3e8c7b6b86bd16::t_2afd2a9f363c52 29
+README.md
+  s_3e8c7b6b86bd16::t_43f45d484141a1 72-74,97
+guides/agentic-awesome-contract-propagation-audit/README.md
+  s_3e8c7b6b86bd16::t_4937ccf2e59259 1-28,30-98
+  s_3e8c7b6b86bd16::t_2afd2a9f363c52 29
+README.en.md
+  s_3e8c7b6b86bd16::t_43f45d484141a1 72-74,97
+guides/agentic-awesome-api-analyzer/README.md
+  s_3e8c7b6b86bd16::t_2afd2a9f363c52 29
+  s_3e8c7b6b86bd16::t_24b7de24441db5 1-28,30-97
+guides/agentic-awesome-decision-navigator/README.md
+  s_3e8c7b6b86bd16::t_c610ebb8cf7cc3 1-28,30-97
+  s_3e8c7b6b86bd16::t_2afd2a9f363c52 29
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "development:1.7.3",
+  "base_commit_sha": "371961a37e815b03519458196b4e49a819c8d8ca",
+  "prompts": {},
+  "sessions": {
+    "s_3e8c7b6b86bd16": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0a860-ce6d-7b12-bcc5-9002072f0296",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "AI_BA <ai_ball@outlook.com>"
+    }
+  }
+}
