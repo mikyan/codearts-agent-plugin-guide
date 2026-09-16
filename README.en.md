@@ -69,6 +69,9 @@ Compatibility claims are evidence-based. A guide must distinguish static analysi
 | Agentic Awesome `code-review-excellence` | `2fce708` | 26.8.1 | Works | [中文](guides/agentic-awesome-code-review-excellence/README.md) · [English](guides/agentic-awesome-code-review-excellence/README.en.md) |
 | Agentic Awesome `debugging-strategies` | `2fce708` | 26.8.1 | Works | [中文](guides/agentic-awesome-debugging-strategies/README.md) · [English](guides/agentic-awesome-debugging-strategies/README.en.md) |
 | Agentic Awesome `testing-patterns` | `2fce708` | 26.8.1 | Works | [中文](guides/agentic-awesome-testing-patterns/README.md) · [English](guides/agentic-awesome-testing-patterns/README.en.md) |
+| Agentic Awesome `api-analyzer` | `69906dd` | 26.8.1 | Works | [中文](guides/agentic-awesome-api-analyzer/README.md) · [English](guides/agentic-awesome-api-analyzer/README.en.md) |
+| Agentic Awesome `cross-platform-contract-propagation-audit` | `69906dd` | 26.8.1 | Works | [中文](guides/agentic-awesome-contract-propagation-audit/README.md) · [English](guides/agentic-awesome-contract-propagation-audit/README.en.md) |
+| Agentic Awesome `decision-navigator` | `69906dd` | 26.8.1 | Works | [中文](guides/agentic-awesome-decision-navigator/README.md) · [English](guides/agentic-awesome-decision-navigator/README.en.md) |
 | Wshobson `api-design-principles` | `367cb6a` | 26.8.1 | Works | [中文](guides/wshobson-api-design-principles/README.md) · [English](guides/wshobson-api-design-principles/README.en.md) |
 | Claude Skills `team-communications` | `aa8d778` | 26.8.1 | Works | [中文](guides/claude-skills-team-communications/README.md) · [English](guides/claude-skills-team-communications/README.en.md) |
 | Khazix Writer | `7a5c493` | 26.8.1 | Works | [中文](guides/khazix-writer/README.md) · [English](guides/khazix-writer/README.en.md) |
@@ -91,7 +94,7 @@ Compatibility claims are evidence-based. A guide must distinguish static analysi
 | PM `intended-vs-implemented` | `18468a9` | 26.8.1 | Works | [中文](guides/pm-intended-vs-implemented/README.md) · [English](guides/pm-intended-vs-implemented/README.en.md) |
 | PM `summarize-meeting` | `18468a9` | 26.8.1 | Works | [中文](guides/pm-summarize-meeting/README.md) · [English](guides/pm-summarize-meeting/README.en.md) |
 
-All fifty-eight formal guide entries were installed, invoked, and rolled back in real CodeArts CLI sessions. Project results were reproduced in a second isolated project; user results were verified from an independent directory without a same-named project skill. Candidates below the guide threshold remain documented in research. The latest evidence is in the [2026-09-15 Agentic Awesome v17.2.0 ten-candidate verification](research/2026-09-15.en.md); earlier records are under [research](research/).
+All sixty-one formal guide entries were installed, invoked, and rolled back in real CodeArts CLI sessions. Project results were reproduced in a second isolated project; user results were verified from an independent directory without a same-named project skill. Candidates below the guide threshold remain documented in research. The latest evidence is in the [2026-09-16 Agentic Awesome v17.3.0 ten-candidate verification](research/2026-09-16.en.md); earlier records are under [research](research/).
 
 ## Reusable verification skill
 
