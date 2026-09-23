@@ -1,0 +1,29 @@
+research/2026-09-23.en.md
+  s_828ec2b1bad656::t_e195af67f6e556 1-108
+guides/agentic-awesome-andrej-karpathy/README.md
+  s_828ec2b1bad656::t_49f636c7ce56df 1-95
+guides/agentic-awesome-andrej-karpathy/README.en.md
+  s_828ec2b1bad656::t_49f636c7ce56df 1-95
+README.en.md
+  s_828ec2b1bad656::t_444dd09ee0f267 79,102
+research/2026-09-23.md
+  s_828ec2b1bad656::t_e195af67f6e556 1-108
+README.md
+  s_828ec2b1bad656::t_444dd09ee0f267 79,102
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "development:1.7.3",
+  "base_commit_sha": "83a629f2de9d60f055f6dbcb79eea70496936c9b",
+  "prompts": {},
+  "sessions": {
+    "s_828ec2b1bad656": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0cc6d-5249-7f43-af37-f5bbb631c16a",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "AI_BA <ai_ball@outlook.com>"
+    }
+  }
+}
