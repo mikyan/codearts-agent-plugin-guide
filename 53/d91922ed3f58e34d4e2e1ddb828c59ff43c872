@@ -1,0 +1,25 @@
+research/2026-09-24.en.md
+  s_3962758e788562::t_a944d7379aa791 1-114
+research/2026-09-24.md
+  s_3962758e788562::t_a944d7379aa791 1-114
+README.en.md
+  s_3962758e788562::t_a944d7379aa791 102
+README.md
+  s_3962758e788562::t_a944d7379aa791 102
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "development:1.7.3",
+  "base_commit_sha": "53d91922ed3f58e34d4e2e1ddb828c59ff43c872",
+  "prompts": {},
+  "sessions": {
+    "s_3962758e788562": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0d192-af0b-7f83-bb82-89ea67c6c37b",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "AI_BA <ai_ball@outlook.com>"
+    }
+  }
+}
