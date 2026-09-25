@@ -1,0 +1,31 @@
+guides/agentic-awesome-weather-data-lifecycle-management/README.en.md
+  s_6b772fdd5416ee::t_b141a55003c9af 76,93
+  s_6b772fdd5416ee::t_18dfa71ad33080 1-75,77-92,94
+research/2026-09-25.en.md
+  s_6b772fdd5416ee::t_1ca81517823344 1-115
+README.md
+  s_6b772fdd5416ee::t_3136dd32333101 80,103
+guides/agentic-awesome-weather-data-lifecycle-management/README.md
+  s_6b772fdd5416ee::t_18dfa71ad33080 1-75,77-92,94
+  s_6b772fdd5416ee::t_b141a55003c9af 76,93
+research/2026-09-25.md
+  s_6b772fdd5416ee::t_1ca81517823344 1-115
+README.en.md
+  s_6b772fdd5416ee::t_3136dd32333101 80,103
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "development:1.7.3",
+  "base_commit_sha": "30e929499f9f7e8fe469140e603e9bff3e0e7e17",
+  "prompts": {},
+  "sessions": {
+    "s_6b772fdd5416ee": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0d6b9-d8d0-7271-a55a-f4860b1d21f1",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "AI_BA <ai_ball@outlook.com>"
+    }
+  }
+}
