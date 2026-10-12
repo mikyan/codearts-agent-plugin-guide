@@ -1,0 +1,45 @@
+research/2026-10-12.en.md
+  s_1798ea03cab395::t_40405bb7f331c5 1-15,17-72,74-83,85-93,95-112
+  s_1798ea03cab395::t_ae1dc0f729a093 16,73,84,94
+README.md
+  s_1798ea03cab395::t_acb8c5606de43a 81-83,106
+guides/agentic-awesome-url-to-markdown/README.md
+  s_1798ea03cab395::t_6762a02a229a23 1-91
+guides/agentic-awesome-business-email-template/README.md
+  s_1798ea03cab395::t_7809292d7eeac8 1-92
+guides/agentic-awesome-business-email-template/README.en.md
+  s_1798ea03cab395::t_7809292d7eeac8 1-92
+guides/agentic-awesome-what-could-break/README.md
+  s_1798ea03cab395::t_50f1256f642903 1-26,28-32,43-67,111-134,136-142,144-151
+  s_1798ea03cab395::t_e69dad6f5db893 33-42
+  s_1798ea03cab395::t_ae1dc0f729a093 27,135,143
+  s_1798ea03cab395::t_198a1517e2907b 68-110
+README.en.md
+  s_1798ea03cab395::t_acb8c5606de43a 81-83,106
+guides/agentic-awesome-what-could-break/README.en.md
+  s_1798ea03cab395::t_ae1dc0f729a093 27,135,143
+  s_1798ea03cab395::t_198a1517e2907b 68-110
+  s_1798ea03cab395::t_e69dad6f5db893 33-42
+  s_1798ea03cab395::t_50f1256f642903 1-26,28-32,43-67,111-134,136-142,144-151
+research/2026-10-12.md
+  s_1798ea03cab395::t_40405bb7f331c5 1-15,17-72,74-83,85-93,95-112
+  s_1798ea03cab395::t_ae1dc0f729a093 16,73,84,94
+guides/agentic-awesome-url-to-markdown/README.en.md
+  s_1798ea03cab395::t_6762a02a229a23 1-91
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "development:1.7.3",
+  "base_commit_sha": "f93a70078d452fb72cc4a21bc7822812ba52514b",
+  "prompts": {},
+  "sessions": {
+    "s_1798ea03cab395": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a12e44-09cb-7441-8214-6ebbfc07790d",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "AI_BA <ai_ball@outlook.com>"
+    }
+  }
+}
