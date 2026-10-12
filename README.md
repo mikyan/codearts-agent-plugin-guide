@@ -78,6 +78,9 @@
 | Agentic Awesome `error-detective` | `69906dd` | 26.8.1 | Works | [中文](guides/agentic-awesome-error-detective/README.md) · [English](guides/agentic-awesome-error-detective/README.en.md) |
 | Agentic Awesome `andrej-karpathy` | `3bc6d81` | 26.8.1 | Works | [中文](guides/agentic-awesome-andrej-karpathy/README.md) · [English](guides/agentic-awesome-andrej-karpathy/README.en.md) |
 | Agentic Awesome `weather-data-lifecycle-management` | `7b534bc` | 26.8.1 | Works | [中文](guides/agentic-awesome-weather-data-lifecycle-management/README.md) · [English](guides/agentic-awesome-weather-data-lifecycle-management/README.en.md) |
+| Agentic Awesome `what-could-break` | `9f2c979` | 26.8.1 | Works | [中文](guides/agentic-awesome-what-could-break/README.md) · [English](guides/agentic-awesome-what-could-break/README.en.md) |
+| Agentic Awesome `url-to-markdown` | `9f2c979` | 26.8.1 | Works | [中文](guides/agentic-awesome-url-to-markdown/README.md) · [English](guides/agentic-awesome-url-to-markdown/README.en.md) |
+| Agentic Awesome `business-email-template` | `9f2c979` | 26.8.1 | Works | [中文](guides/agentic-awesome-business-email-template/README.md) · [English](guides/agentic-awesome-business-email-template/README.en.md) |
 | Wshobson `api-design-principles` | `367cb6a` | 26.8.1 | Works | [中文](guides/wshobson-api-design-principles/README.md) · [English](guides/wshobson-api-design-principles/README.en.md) |
 | Claude Skills `team-communications` | `aa8d778` | 26.8.1 | Works | [中文](guides/claude-skills-team-communications/README.md) · [English](guides/claude-skills-team-communications/README.en.md) |
 | Khazix Writer | `7a5c493` | 26.8.1 | Works | [中文](guides/khazix-writer/README.md) · [English](guides/khazix-writer/README.en.md) |
@@ -100,7 +103,7 @@
 | PM `intended-vs-implemented` | `18468a9` | 26.8.1 | Works | [中文](guides/pm-intended-vs-implemented/README.md) · [English](guides/pm-intended-vs-implemented/README.en.md) |
 | PM `summarize-meeting` | `18468a9` | 26.8.1 | Works | [中文](guides/pm-summarize-meeting/README.md) · [English](guides/pm-summarize-meeting/README.en.md) |
 
-六十七个正式指南条目都已通过自定义 MiMo 模型在真实 CodeArts CLI 会话中完成安装、调用与回滚。项目级结果在第二个隔离项目中复现，个人级结果从没有项目级同名 Skill 的独立目录验证。未达指南门槛的候选仍记录在 research。最新证据见 [2026-09-25 Agentic Awesome v18.4.0 十项验证记录](research/2026-09-25.md)，早期记录见 [research](research/)。
+七十个正式指南条目都已通过自定义 MiMo 模型在真实 CodeArts CLI 会话中完成安装、调用与回滚。项目级结果在第二个隔离项目中复现，个人级结果从没有项目级同名 Skill 的独立目录验证。未达指南门槛的候选仍记录在 research。最新证据见 [2026-10-12 Agentic Awesome v19.4.0 十项验证记录](research/2026-10-12.md)，早期记录见 [research](research/)。
 
 ## 可复用验证 Skill
 
