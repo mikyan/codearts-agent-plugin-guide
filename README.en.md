@@ -81,6 +81,7 @@ Compatibility claims are evidence-based. A guide must distinguish static analysi
 | Agentic Awesome `what-could-break` | `9f2c979` | 26.8.1 | Works | [中文](guides/agentic-awesome-what-could-break/README.md) · [English](guides/agentic-awesome-what-could-break/README.en.md) |
 | Agentic Awesome `url-to-markdown` | `9f2c979` | 26.8.1 | Works | [中文](guides/agentic-awesome-url-to-markdown/README.md) · [English](guides/agentic-awesome-url-to-markdown/README.en.md) |
 | Agentic Awesome `business-email-template` | `9f2c979` | 26.8.1 | Works | [中文](guides/agentic-awesome-business-email-template/README.md) · [English](guides/agentic-awesome-business-email-template/README.en.md) |
+| Agentic Awesome `cockney` | `a307264` | 26.8.1 | Works | [中文](guides/agentic-awesome-cockney/README.md) · [English](guides/agentic-awesome-cockney/README.en.md) |
 | Wshobson `api-design-principles` | `367cb6a` | 26.8.1 | Works | [中文](guides/wshobson-api-design-principles/README.md) · [English](guides/wshobson-api-design-principles/README.en.md) |
 | Claude Skills `team-communications` | `aa8d778` | 26.8.1 | Works | [中文](guides/claude-skills-team-communications/README.md) · [English](guides/claude-skills-team-communications/README.en.md) |
 | Khazix Writer | `7a5c493` | 26.8.1 | Works | [中文](guides/khazix-writer/README.md) · [English](guides/khazix-writer/README.en.md) |
@@ -103,7 +104,7 @@ Compatibility claims are evidence-based. A guide must distinguish static analysi
 | PM `intended-vs-implemented` | `18468a9` | 26.8.1 | Works | [中文](guides/pm-intended-vs-implemented/README.md) · [English](guides/pm-intended-vs-implemented/README.en.md) |
 | PM `summarize-meeting` | `18468a9` | 26.8.1 | Works | [中文](guides/pm-summarize-meeting/README.md) · [English](guides/pm-summarize-meeting/README.en.md) |
 
-All seventy formal guide entries were installed, invoked, and rolled back in real CodeArts CLI sessions. Project results were reproduced in a second isolated project; user results were verified from an independent directory without a same-named project skill. Candidates below the guide threshold remain documented in research. The latest evidence is in the [2026-10-12 Agentic Awesome v19.4.0 ten-candidate verification](research/2026-10-12.en.md); earlier records are under [research](research/).
+All seventy-one formal guide entries were installed, invoked, and rolled back in real CodeArts CLI sessions. Project results were reproduced in a second isolated project; user results were verified from an independent directory without a same-named project skill. Candidates below the guide threshold remain documented in research. The latest evidence is in the [2026-10-15 Agentic Awesome v19.7.0 ten-candidate verification](research/2026-10-15.en.md); earlier records are under [research](research/).
 
 ## Reusable verification skill
 
