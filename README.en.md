@@ -107,7 +107,7 @@ Compatibility claims are evidence-based. A guide must distinguish static analysi
 | PM `intended-vs-implemented` | `18468a9` | 26.8.1 | Works | [中文](guides/pm-intended-vs-implemented/README.md) · [English](guides/pm-intended-vs-implemented/README.en.md) |
 | PM `summarize-meeting` | `18468a9` | 26.8.1 | Works | [中文](guides/pm-summarize-meeting/README.md) · [English](guides/pm-summarize-meeting/README.en.md) |
 
-All seventy-four formal guide entries were installed, invoked, and rolled back in real CodeArts CLI sessions. Project results were reproduced in a second isolated project; user results were verified from an independent directory without a same-named project skill. Candidates below the guide threshold remain documented in research. The latest evidence is in the [2026-10-26 Agentic Awesome v20.0.0 ten-candidate verification](research/2026-10-26.en.md); earlier records are under [research](research/).
+All seventy-four formal guide entries were installed, invoked, and rolled back in real CodeArts CLI sessions. Project results were reproduced in a second isolated project; user results were verified from an independent directory without a same-named project skill. Candidates below the guide threshold remain documented in research. The latest evidence is in the [2026-10-27 Agentic Awesome v20.0.0 ten-candidate verification](research/2026-10-27.en.md); earlier records are under [research](research/).
 
 ## Reusable verification skill
 
