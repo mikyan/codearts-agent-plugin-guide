@@ -1,0 +1,29 @@
+research/2026-10-27.md
+  s_949de212b93fe5::t_95a1b53ea3d7ad 42-51
+  s_949de212b93fe5::t_4d511a3a6b61c0 13-14
+  s_949de212b93fe5::t_9a2d8941782849 1-12,15-41,52-131
+research/2026-10-27.en.md
+  s_949de212b93fe5::t_4d511a3a6b61c0 13-14
+  s_949de212b93fe5::t_95a1b53ea3d7ad 42-51
+  s_949de212b93fe5::t_eefd336ba5c25e 1-12,15-41,52-131
+README.md
+  s_949de212b93fe5::t_eefd336ba5c25e 110
+README.en.md
+  s_949de212b93fe5::t_eefd336ba5c25e 110
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "development:1.7.3",
+  "base_commit_sha": "bd4af73c86be050ed8e3db36b8b6dc327f7fe6a6",
+  "prompts": {},
+  "sessions": {
+    "s_949de212b93fe5": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a17b88-1c00-7950-b5ce-bc01e744086f",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "AI_BA <ai_ball@outlook.com>"
+    }
+  }
+}
