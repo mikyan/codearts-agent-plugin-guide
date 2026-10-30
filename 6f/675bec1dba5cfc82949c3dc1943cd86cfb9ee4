@@ -1,0 +1,25 @@
+research/2026-10-30.md
+  s_c8bb01ee5663ed::t_3fa1bcdf051407 1-112
+README.en.md
+  s_c8bb01ee5663ed::t_3fa1bcdf051407 110
+research/2026-10-30.en.md
+  s_c8bb01ee5663ed::t_3fa1bcdf051407 1-112
+README.md
+  s_c8bb01ee5663ed::t_3fa1bcdf051407 110
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "development:1.7.3",
+  "base_commit_sha": "6f675bec1dba5cfc82949c3dc1943cd86cfb9ee4",
+  "prompts": {},
+  "sessions": {
+    "s_c8bb01ee5663ed": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a18af3-1499-7262-94b4-b5c4e3244805",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "AI_BA <ai_ball@outlook.com>"
+    }
+  }
+}
